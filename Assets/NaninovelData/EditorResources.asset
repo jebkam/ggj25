@@ -148,7 +148,7 @@ MonoBehaviour:
     Resources:
     - name: BG-Curtain
       pathPrefix: Backgrounds/MainBackground
-      guid: b56b662fd5c594988aa5c79954e3b566
+      guid: c85c9973570234e169eb4c388fc52995
     - name: BG-Stage
       pathPrefix: Backgrounds/MainBackground
       guid: 2681710d92f234233b30b580eb08f32a
@@ -171,7 +171,7 @@ MonoBehaviour:
     Resources:
     - name: Neutral
       pathPrefix: Characters/CH-Chewy
-      guid: f86b5c8aa34b94196bff4bdb11725b04
+      guid: 4ae3e4f245d1d4911a880e649eb2d92e
   - Id: Characters/6d2a8763-3bfb-43a2-bda8-a0df54fed500
     Resources:
     - name: Neutral
@@ -227,7 +227,7 @@ MonoBehaviour:
     Resources:
     - name: Neutral
       pathPrefix: Characters/CH-Soapia
-      guid: f86b5c8aa34b94196bff4bdb11725b04
+      guid: 560b42bae90eb4028bfc0ddc9c8e109e
   - Id: Characters/42ff3720-3505-43a9-a4ff-1c17435e948e
     Resources:
     - name: Neutral

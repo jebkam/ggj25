@@ -3,20 +3,18 @@
 @back BG-Stage
 
 ; START
-@char CH-Host look:Left pos:20
+@char CH-Host look:Left pos:20 time:0
 @wait 1
-@char CH-Host look:Right pos:80
+@char CH-Host look:Right pos:80 time:0
 @wait 1
 @char CH-Host look:Left pose:Speaking
 
 
+
 # ShowStart
 CH-Host: Welcome to The Love Bubble! 
-
 CH-Host: I’m your host Rubby Seacrest. 
-
 CH-Host: In tonight's show a happy couple of bubbles will find love forever, or be popped for ever. Haha!
-
 CH-Host: We start with our main character of the night, please everyone give a round go applause to! 
 
 @input playerName summary:"What's your name?"
@@ -58,7 +56,7 @@ CH-Thursday: Sup?
 @char CH-Host pose:Speaking
 CH-Host:  For our first segment {playerName} will ask our contestants a couple of inquiries to break the ice, Let the games begin! 
 
-# Questions
+# R1Questions
 CH-Host: Which question will you ask?
 
 @choice "What would be you ideal date scenario?" goto:.IdealDateAnswer
@@ -112,11 +110,85 @@ CH-Soapia: Im more of a beach or hiking in Funyon Canyon, but aa s classy gal I 
 CH-Host: My question would have been “What is the correct way to pronounce chimichanga?” And you better say “Chi-mee-chaang-guh”… 
 
 CH-Host: We’ll be back after a word from our sponsors. 
+
+
+# Round2
+CH-Host: And we are back! 
+CH-Host: This time for Round 2, Fight! 
+CH-Host: Just kidding! Haha (*wink*). 
+CH-Host: It’s Flash Round time! Our beloved {playerName} has to answer swiftly or you might be the one popping out of here tonight!
+
+# R2Questions
+CH-Host: Dogs or Cats?
+@choice Dogs
+@choice Cats
+@stop
+
+CH-Host: Bar Soap or Shower Gel?
+@choice "Bar Soap"
+@choice "Shower Gel"
+@stop
+
+CH-Host: Is it pronounced “Los Feelix” or “Los Faeleez"?
+@choice "Los Feelix"
+@choice "Los Faeleez"
 @stop
 
 
+CH-Host: Puerto Rico or Costa Rica? Its not the same.
+@choice "Puerto Rico"
+@choice "Costa Rica"
+@stop
+
+CH-Host: Circle or Square?
+@choice Circle
+@choice Square
+@stop
+
+CH-Host: Wowza! So fast! {playerName} really opened themselves up!
+
+# Round3
+CH-Host: Aaand now, our first moment of truth, our Elimination Round!…
+
+# R3Questions
+CH-Host: YOU have to choose TWO contestants to eliminate. It’s a hard decision, but thats life, haha! (*wink*)
+@choice Chewy
+@choice Soapia
+@choice Thursday
+@stop
 
 
+CH-Host: My rubber heart just got broken in a million rubber bands, but the show must go on we are moving to our final round, the Final Choice!
+
+# FinalChoice
+CH-Host: RUBBY: Now our chosen one is going to decide if this Love Bubble is going to happen or if {playerName} is going to Pop. 
+CH-Host: Let’s see what the chosen feels…
+
+
+# FCYes
+CH-Thursday: “You will look so good with eyeliner! I say Yes! Let’s go watch Frothferatu!
+CH-Soapia: ‘Well, If you like me and I like you then, Yes! Two tickets for Micheal Bublé please! (*giggles*)
+CH-Chewy: Alright, Yes, lets do it! Can’t wait for you to meet Bobba. Next stop, Ballholland Drive!
+
+
+
+# FCNo
+CH-Thursday: “Charming, but not my style. See you floating around. My eye liner’s wearing off, I gotta go.”
+CH-Soapia: “How sweet! I’m flattered, but ‘m not interested. Maybe we can be friends on bubble media.”
+CH-Chewy: “Now that I think about it, there’s only space for me and Bobby in my bachelor pad.
+
+
+
+# ShowEnd
+CH-Host: Aawww! Sorry to hear that. We have a clear No from our constant. 
+CH-Host: Sorry {playerName}, looks like you’ll be doing the float of shame out of here.
+CH-Host: Don’t miss next show’s edition of Toxic Bubbles! See you then!.
+CH-Host: Thank you for playing!
+
+CH-Host: Wowza! And they’ve said Yes! 
+CH-Host: A Love Bubble have been created, my eyes have started to water. 
+CH-Host: Come back for next week episode when we will have Celebrity Floaters with Droplet Johansson and Ball Pacino!
+CH-Host: Thank you for playing!
 
 
 
