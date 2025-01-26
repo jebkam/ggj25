@@ -217,6 +217,12 @@ MonoBehaviour:
     - name: SFX_Contestant_happy_reaction
       pathPrefix: Audio
       guid: 3ca027cd65a94472595b3dfcfca602b9
+    - name: SFX_Elimination_Bubble_Pop_01
+      pathPrefix: Audio
+      guid: fc1973fb460d24494a17b334ebe68ee5
+    - name: SFX_Elimination_Bubble_Pop_02
+      pathPrefix: Audio
+      guid: 62bc48b7ceb8c43718ef252438500031
   - Id: Characters/813fef27-3d31-4905-a2f3-6fdcf76b2c1a
     Resources:
     - name: Neutral
