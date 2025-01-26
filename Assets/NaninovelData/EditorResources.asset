@@ -181,3 +181,20 @@ MonoBehaviour:
       guid: 3e7ec2a763a1e4a8e98337c46aa94b87
   - Id: CharacterAvatars
     Resources: []
+  - Id: Audio
+    Resources:
+    - name: Music_Stinger
+      pathPrefix: Audio
+      guid: 0068d0a855c5ab3418ebf30c35fe3a38
+    - name: UI_Button_Hover
+      pathPrefix: Audio
+      guid: 9561fbdafb1c0b44b9e3fd676b39df08
+    - name: UI_Button_Select
+      pathPrefix: Audio
+      guid: 2c0459b2edc714e45b4f438f32876434
+    - name: SFX_Bubble_Pop_01
+      pathPrefix: Audio
+      guid: c3299d1db24676e40a0d6f1a3cab0b22
+    - name: SFX_Bubble_Pop_03
+      pathPrefix: Audio
+      guid: 57bba8d125c0dc544bc4618602c84fc5
