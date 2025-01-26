@@ -1,29 +1,34 @@
 ; SETUP
-@char ch_01-host 
-@back Environment_LaffAttic_Date-1
+@char CH-Host 
+@back BG-Stage
 
 ; START
-@char ch_01-host look:Left pos:20
+@char CH-Host look:Left pos:20
 @wait 1
-@char ch_01-host look:Right pos:50
+@char CH-Host look:Right pos:50
 @wait 1
-ch_01-host: Hello world! 
+CH-Host: Hello everyone and welcome to LOVE-OR-POP! Let's welcome our special guest...
 
+@input playerName summary:"What's your name?" 
 
-ch_01-host: Let's make some choices!
+@stop
+
+CH-Host: Hello, {playerName}!
+CH-Player: Happy to be here.
+
+CH-Host: Let's make some choices!
+
 @choice "Continue from the next line" set:lovePoints+=1
 @choice "Continue from the specified label" goto:.Labelname
 @stop
 
 
-ch_01-host: Next line. Love Points are {lovePoints}
+CH-Host: Next line. Love Points are {lovePoints}
+@char CH-Chuwy.Neutral pos:80
+CH-Host: Let's play bubbles!
+CH-Chuwy: Words and bubbles! Many Bubbles!
+
 @stop
 
 #Labelname
-ch_01-host: Specific label
-@input playerName summary:"What's your name?" 
-
-@stop
-
-ch_01-host: Hello, {playerName}!
-@stop
+CH-Host: Specific label

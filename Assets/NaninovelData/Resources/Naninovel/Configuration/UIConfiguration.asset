@@ -28,5 +28,8 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   OverrideObjectsLayer: 1
   ObjectsLayer: 5
-  FontOptions: []
-  DefaultFont: 
+  FontOptions:
+  - FontName: Chango
+    FontResource: Assets/Fonts/Chango/Chango-Regular.ttf
+    ApplyOnLocale: 
+  DefaultFont: Chango

@@ -66,76 +66,12 @@ MonoBehaviour:
     Poses: []
   Metadata:
     ids:
-    - ch00
-    - ch_00-player
-    - ch_01-host
-    - ch_02-contestant-1
-    - ch_03-contestant-2
-    - ch_04-contestant-3
+    - CH-Player
+    - CH-Host
+    - CH-Chuwy
+    - CH-Soapia
+    - CH-Thursday
     metas:
-    - Implementation: Naninovel.SpriteCharacter, Elringus.Naninovel.Runtime, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      Loader:
-        PathPrefix: Characters
-        ProviderTypes:
-        - Naninovel.AddressableResourceProvider, Elringus.Naninovel.Runtime, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        - Naninovel.ProjectResourceProvider, Elringus.Naninovel.Runtime, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-      guid: 6d2a8763-3bfb-43a2-bda8-a0df54fed500
-      customData:
-        rid: -2
-      Pivot: {x: 0.5, y: 0.25}
-      PixelsPerUnit: 100
-      EnableDepthPass: 1
-      DepthAlphaCutoff: 0.5
-      CustomTextureMaterial: {fileID: 0}
-      CustomSpriteMaterial: {fileID: 0}
-      RenderTexture: {fileID: 0}
-      RenderRectangle:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1
-        height: 1
-      BakedLookDirection: 1
-      HasName: 1
-      DisplayName: Genji
-      UseCharacterColor: 0
-      NameColor: {r: 1, g: 1, b: 1, a: 1}
-      MessageColor: {r: 1, g: 1, b: 1, a: 1}
-      HighlightWhenSpeaking: 0
-      HighlightCharacterCount: 0
-      SpeakingPose: 
-      NotSpeakingPose: 
-      PlaceOnTop: 1
-      HighlightDuration: 0.35
-      HighlightEasing: 1
-      MessageSound: 
-      MessageSoundPlayback: 0
-      VoiceSource: {fileID: 0}
-      LinkedPrinter: 
-      Poses:
-      - name: Neutral
-        actorState:
-          appearance: Character_Genji_Pose_Neutral
-          visible: 0
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0, w: 0}
-          scale: {x: 0, y: 0, z: 0}
-          tintColor: {r: 0, g: 0, b: 0, a: 0}
-          lookDirection: 0
-        overriddenProperties: []
-      - name: Action
-        actorState:
-          appearance: Character_Genji_Pose_Action
-          visible: 0
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0, w: 0}
-          scale: {x: 0, y: 0, z: 0}
-          tintColor: {r: 0, g: 0, b: 0, a: 0}
-          lookDirection: 0
-        overriddenProperties: []
     - Implementation: Naninovel.NarratorCharacter, Elringus.Naninovel.Runtime, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       Loader:
@@ -163,7 +99,7 @@ MonoBehaviour:
         height: 1
       BakedLookDirection: 1
       HasName: 1
-      DisplayName: 
+      DisplayName: '{playerName}'
       UseCharacterColor: 0
       NameColor: {r: 1, g: 1, b: 1, a: 1}
       MessageColor: {r: 1, g: 1, b: 1, a: 1}
@@ -211,7 +147,7 @@ MonoBehaviour:
       guid: 2fecf887-42d1-41a2-b5d3-2a6cafc02297
       customData:
         rid: -2
-      Pivot: {x: 0.5, y: 0}
+      Pivot: {x: 0.5, y: -0.5}
       PixelsPerUnit: 100
       EnableDepthPass: 1
       DepthAlphaCutoff: 0.5
@@ -226,7 +162,7 @@ MonoBehaviour:
         height: 1
       BakedLookDirection: 1
       HasName: 1
-      DisplayName: 
+      DisplayName: Rubbert
       UseCharacterColor: 0
       NameColor: {r: 1, g: 1, b: 1, a: 1}
       MessageColor: {r: 1, g: 1, b: 1, a: 1}
@@ -237,21 +173,11 @@ MonoBehaviour:
       PlaceOnTop: 1
       HighlightDuration: 0.35
       HighlightEasing: 1
-      MessageSound: 
+      MessageSound: SFX_Bubble_Pop_01
       MessageSoundPlayback: 0
       VoiceSource: {fileID: 0}
       LinkedPrinter: 
-      Poses:
-      - name: Host
-        actorState:
-          appearance: 
-          visible: 0
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0, w: 0}
-          scale: {x: 0, y: 0, z: 0}
-          tintColor: {r: 0, g: 0, b: 0, a: 0}
-          lookDirection: 0
-        overriddenProperties: []
+      Poses: []
     - Implementation: Naninovel.SpriteCharacter, Elringus.Naninovel.Runtime, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       Loader:
@@ -279,7 +205,7 @@ MonoBehaviour:
         height: 1
       BakedLookDirection: 1
       HasName: 1
-      DisplayName: 
+      DisplayName: Chuwy
       UseCharacterColor: 0
       NameColor: {r: 1, g: 1, b: 1, a: 1}
       MessageColor: {r: 1, g: 1, b: 1, a: 1}
@@ -322,7 +248,7 @@ MonoBehaviour:
         height: 1
       BakedLookDirection: 1
       HasName: 1
-      DisplayName: 
+      DisplayName: Soapia
       UseCharacterColor: 0
       NameColor: {r: 1, g: 1, b: 1, a: 1}
       MessageColor: {r: 1, g: 1, b: 1, a: 1}
@@ -365,7 +291,7 @@ MonoBehaviour:
         height: 1
       BakedLookDirection: 1
       HasName: 1
-      DisplayName: 
+      DisplayName: Thursday
       UseCharacterColor: 0
       NameColor: {r: 1, g: 1, b: 1, a: 1}
       MessageColor: {r: 1, g: 1, b: 1, a: 1}
@@ -388,27 +314,7 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
     - Naninovel.ProjectResourceProvider, Elringus.Naninovel.Runtime, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  SharedPoses:
-  - name: Neutral
-    actorState:
-      appearance: 
-      visible: 0
-      position: {x: 0, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 0}
-      scale: {x: 0, y: 0, z: 0}
-      tintColor: {r: 0, g: 0, b: 0, a: 0}
-      lookDirection: 0
-    overriddenProperties: []
-  - name: Action
-    actorState:
-      appearance: 
-      visible: 0
-      position: {x: 0, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 0}
-      scale: {x: 0, y: 0, z: 0}
-      tintColor: {r: 0, g: 0, b: 0, a: 0}
-      lookDirection: 0
-    overriddenProperties: []
+  SharedPoses: []
   references:
     version: 2
     RefIds:

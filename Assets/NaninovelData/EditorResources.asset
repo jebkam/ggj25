@@ -146,16 +146,17 @@ MonoBehaviour:
       guid: 735d6aa767879aa469134858c5b2f0a7
   - Id: Backgrounds/6e3ebf16-e02d-48b1-b23e-afc18f72a889
     Resources:
-    - name: Environment_LaffAttic_Date-1
+    - name: BG-Curtain
       pathPrefix: Backgrounds/MainBackground
-      guid: f3ebe5ff3bbb24cdaa4a85af2c20ae3a
-  - Id: Backgrounds/2d75fd02-0d82-4775-91bd-474bc3b54da0
-    Resources:
-    - name: Environment_LaffAttic_Date-1
-      pathPrefix: Backgrounds/bg_01
-      guid: f3ebe5ff3bbb24cdaa4a85af2c20ae3a
+      guid: b56b662fd5c594988aa5c79954e3b566
+    - name: BG-Stage
+      pathPrefix: Backgrounds/MainBackground
+      guid: 85668e8a0b3be4de5bdae4c16b3fe91b
   - Id: Characters/2fecf887-42d1-41a2-b5d3-2a6cafc02297
-    Resources: []
+    Resources:
+    - name: Host
+      pathPrefix: Characters/CH-Host
+      guid: b8eadb52d0e4f454a90b5e899c5bd09d
   - Id: Characters/336b686e-bf7e-4ee4-ae39-858a6147ee94
     Resources:
     - name: Player
@@ -170,15 +171,15 @@ MonoBehaviour:
       pathPrefix: Scripts
       guid: 2bfb9803d1ba6465f836b14ec05e74b7
   - Id: Characters/a84f0262-54d5-47b6-a73d-1ca2c364a8d4
-    Resources: []
+    Resources:
+    - name: Neutral
+      pathPrefix: Characters/CH-Chuwy
+      guid: f86b5c8aa34b94196bff4bdb11725b04
   - Id: Characters/6d2a8763-3bfb-43a2-bda8-a0df54fed500
     Resources:
-    - name: Character_Genji_Pose_Neutral
+    - name: Neutral
       pathPrefix: Characters/ch00
-      guid: 41901cd5170d940799932d448394b44c
-    - name: Character_Genji_Pose_Action
-      pathPrefix: Characters/ch00
-      guid: 3e7ec2a763a1e4a8e98337c46aa94b87
+      guid: 8e16782d1fb2b4afa8ae668ba67fe0b9
   - Id: CharacterAvatars
     Resources: []
   - Id: Audio
