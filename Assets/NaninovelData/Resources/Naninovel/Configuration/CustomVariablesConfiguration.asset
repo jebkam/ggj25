@@ -13,7 +13,15 @@ MonoBehaviour:
   m_Name: CustomVariablesConfiguration
   m_EditorClassIdentifier: 
   PredefinedVariables:
-  - name: lovePoints
-    value: 0
   - name: playerName
     value: '""'
+  - name: pointsChewy
+    value: 0
+  - name: pointsSoapia
+    value: 0
+  - name: pointsThursday
+    value: 0
+  - name: answeredQ1
+    value: false
+  - name: answeredQ2
+    value: false

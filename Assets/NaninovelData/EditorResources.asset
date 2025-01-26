@@ -223,6 +223,18 @@ MonoBehaviour:
     - name: SFX_Elimination_Bubble_Pop_02
       pathPrefix: Audio
       guid: 62bc48b7ceb8c43718ef252438500031
+    - name: BGM_Elimination
+      pathPrefix: Audio
+      guid: 2d350dc183b524d88ae61a9a0f903a4e
+    - name: BGM_Show
+      pathPrefix: Audio
+      guid: 1c7b440b8f6ad4781a797381a1fbdd1d
+    - name: BGM_Show_FF
+      pathPrefix: Audio
+      guid: 383de02434ec74b028ca6af5e87b610b
+    - name: BGM_Title
+      pathPrefix: Audio
+      guid: e49c451ae06ca4b2fa49fbf70e47ba62
   - Id: Characters/813fef27-3d31-4905-a2f3-6fdcf76b2c1a
     Resources:
     - name: Neutral

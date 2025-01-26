@@ -1,6 +1,7 @@
 ; SETUP
 @char CH-Host
 @back BG-Stage
+@bgm BGM_Show fade:3
 
 ; START
 @char CH-Host look:Left pos:20 time:0
@@ -9,12 +10,12 @@
 @wait 1
 @char CH-Host look:Left pose:Speaking
 
-
+@goto .Round2
 
 # ShowStart
 CH-Host: Welcome to The Love Bubble! 
 CH-Host: I’m your host Rubby Seacrest. 
-CH-Host: In tonight's show a happy couple of bubbles will find love forever, or be popped for ever. Haha!
+CH-Host: In tonight's show a happy couple of bubbles will find love forever, or be popped for ever. Haha! (*wink*)
 CH-Host: We start with our main character of the night, please everyone give a round go applause to! 
 
 @input playerName summary:"What's your name?"
@@ -58,10 +59,11 @@ CH-Host:  For our first segment {playerName} will ask our contestants a couple o
 
 # R1Questions
 CH-Host: Which question will you ask?
+@if answeredQ1=false    
+    @choice "What would be you ideal date scenario?" goto:.IdealDateAnswer set:answeredQ1=true
 
-@choice "What would be you ideal date scenario?" goto:.IdealDateAnswer
-
-@choice "Frothferatu, Air Sud 2 or The Soapfather, what’s your favorite movie, and why is it The Soapfather?" goto:.FavoriteMovieAnswer
+@if answeredQ2=false    
+    @choice "Frothferatu, Air Sud 2 or The Soapfather, what’s your favorite movie, and why is it The Soapfather?" goto:.FavoriteMovieAnswer set:answeredQ2=true
 @stop
 
 
@@ -89,8 +91,11 @@ CH-Thursday: Lay down in the lawn, look at the stars and the moon all night. The
 @char CH-Thursday pose:Quiet
 @char CH-Host pose:Speaking
 CH-Host: Nature, stars and bed. They really know what they want. 
-@stop
+@if answeredQ2=true 
+    @goto .Round2
 
+@hide "What would be you ideal date scenario?"
+@goto .R1Questions
 
 # FavoriteMovieAnswer
 @char CH-Host pose:Quiet
@@ -109,43 +114,56 @@ CH-Soapia: Im more of a beach or hiking in Funyon Canyon, but aa s classy gal I 
 @char CH-Host pose:Speaking
 CH-Host: My question would have been “What is the correct way to pronounce chimichanga?” And you better say “Chi-mee-chaang-guh”… 
 
+@if answeredQ1=true 
+    @goto .Round2
+
+@goto .R1Questions
+
 CH-Host: We’ll be back after a word from our sponsors. 
 
 
 # Round2
 CH-Host: And we are back! 
-CH-Host: This time for Round 2, Fight! 
+CH-Host: This time for Round 2.
+CH-Host: Fight! 
 CH-Host: Just kidding! Haha (*wink*). 
 CH-Host: It’s Flash Round time! Our beloved {playerName} has to answer swiftly or you might be the one popping out of here tonight!
 
 # R2Questions
-CH-Host: Dogs or Cats?
-@choice Dogs
-@choice Cats
-@stop
-
-CH-Host: Bar Soap or Shower Gel?
-@choice "Bar Soap"
-@choice "Shower Gel"
-@stop
-
-CH-Host: Is it pronounced “Los Feelix” or “Los Faeleez"?
-@choice "Los Feelix"
-@choice "Los Faeleez"
+CH-Host: Dogs or Cats? Thursday = {pointsThursday} Chewy = {pointsChewy} Soapia = {pointsSoapia} . 
+@choice Dogs set:pointsSoapia+=1
+@choice Cats set:pointsChewy+=1
 @stop
 
 
-CH-Host: Puerto Rico or Costa Rica? Its not the same.
-@choice "Puerto Rico"
-@choice "Costa Rica"
+
+CH-Host: Bar Soap or Shower Gel? Thursday = {pointsThursday} Chewy = {pointsChewy} Soapia = {pointsSoapia} . 
+@choice "Bar Soap" set:pointsThursday+=1;pointsChewy+=1
+@choice "Shower Gel" set:pointsSoapia+=1
+
 @stop
 
-CH-Host: Circle or Square?
-@choice Circle
-@choice Square
+CH-Host: Is it pronounced “Los Feelix” or “Los Faeleez"? Thursday = {pointsThursday} Chewy = {pointsChewy} Soapia = {pointsSoapia} . 
+@choice "Los Feelix" set:pointsSoapia+=1
+@choice "Los Faeleez" set:pointsThursday+=1
+
+@stop
+
+
+CH-Host: Puerto Rico or Costa Rica? Its not the same. Thursday = {pointsThursday} Chewy = {pointsChewy} Soapia = {pointsSoapia} . 
+@choice "Puerto Rico" set:pointsThursday+=1
+@choice "Costa Rica" set:pointsChewy+=1
+
+@stop
+
+CH-Host: Circle or Square? Thursday = {pointsThursday} Chewy = {pointsChewy} Soapia = {pointsSoapia} . 
+@choice Circle set:pointsChewy+=1;pointsSoapia+=1
+@choice Square set:pointsThursday+=1
+
 @stop
 
 CH-Host: Wowza! So fast! {playerName} really opened themselves up!
+
 
 # Round3
 CH-Host: Aaand now, our first moment of truth, our Elimination Round!…
@@ -191,15 +209,3 @@ CH-Host: Come back for next week episode when we will have Celebrity Floaters wi
 CH-Host: Thank you for playing!
 
 
-
-# REFERENCE
-@choice "Continue from the next line" set:lovePoints+=1
-@choice "Continue from the specified label" goto:.Labelname
-@stop
-CH-Host: Next line. Love Points are {lovePoints}
-@char CH-Chewy pos:80
-CH-Host: Let's play bubbles!
-CH-Chewy: Words and bubbles! Many Bubbles!
-@stop
-# Labelname
-CH-Host: Specific label
