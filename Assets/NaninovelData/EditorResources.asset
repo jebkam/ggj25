@@ -158,18 +158,15 @@ MonoBehaviour:
       pathPrefix: Characters/CH-Host
       guid: b8eadb52d0e4f454a90b5e899c5bd09d
   - Id: Characters/336b686e-bf7e-4ee4-ae39-858a6147ee94
-    Resources:
-    - name: Player
-      pathPrefix: Characters/ch_00-player
-      guid: 
+    Resources: []
   - Id: Scripts
     Resources:
-    - name: 
-      pathPrefix: Scripts
-      guid: 
     - name: Nani_Love-Bubble
       pathPrefix: Scripts
       guid: 2bfb9803d1ba6465f836b14ec05e74b7
+    - name: scr_01
+      pathPrefix: Scripts
+      guid: 
   - Id: Characters/a84f0262-54d5-47b6-a73d-1ca2c364a8d4
     Resources:
     - name: Neutral
