@@ -1,0 +1,126 @@
+; SETUP
+@char CH-Host
+@back BG-Stage
+
+; START
+@char CH-Host look:Left pos:20
+@wait 1
+@char CH-Host look:Right pos:80
+@wait 1
+@char CH-Host look:Left pose:Speaking
+
+
+# ShowStart
+CH-Host: Welcome to The Love Bubble! 
+
+CH-Host: I’m your host Rubby Seacrest. 
+
+CH-Host: In tonight's show a happy couple of bubbles will find love forever, or be popped for ever. Haha!
+
+CH-Host: We start with our main character of the night, please everyone give a round go applause to! 
+
+@input playerName summary:"What's your name?"
+@stop
+
+CH-Host: {playerName} is in between 4 feet and 6’ 10, likes long floatings on the beach and it has a perfect round shape for it is a bubble.
+
+
+
+# Contestants
+CH-Host: And now, the first of three fabulous and bubbly contestants! 
+
+CH-Host: She’s here to sweep you of your feet, she has perfect film and her name is SOAPIA!
+
+@char CH-Host pose:Quiet
+@char CH-Soapia pos:55 pose:Speaking
+CH-Soapia: Hello darlings! If you choose me we’ll shine together. I’m ready to float to where the wind takes us.
+
+@char CH-Soapia pose:Quiet
+@char CH-Host pose:Speaking
+CH-Host: Contestant number 2 is strong to the “tea”, for he owns a Bobba Tea shop, He has a cat and drives an electric bubble. This is CHEWY!
+
+@char CH-Host pose:Quiet
+@char CH-Chewy pos:35 pose:Speaking
+CH-Chewy: I’m so strong I can lift up any lady, and I have a cat named Bobba, like the tea, get it? I'm also funny bro.
+
+@char CH-Chewy pose:Quiet
+@char CH-Host pose:Speaking
+CH-Host: Last but not least, directly from Foamrida, they're a software engineer everyday, but their name is THURSDAY!
+
+
+@char CH-Host pose:Quiet
+@char CH-Thursday pos:15 pose:Speaking
+CH-Thursday: Sup?
+
+@char CH-Thursday pose:Quiet
+
+# Round1
+@char CH-Host pose:Speaking
+CH-Host:  For our first segment {playerName} will ask our contestants a couple of inquiries to break the ice, Let the games begin! 
+
+# Questions
+CH-Host: Which question will you ask?
+
+@choice "What would be you ideal date scenario?" goto:.IdealDateAnswer
+
+@choice "Frothferatu, Air Sud 2 or The Soapfather, what’s your favorite movie, and why is it The Soapfather?" goto:.FavoriteMovieAnswer
+@stop
+
+
+# IdealDateAnswer
+@char CH-Host pose:Quiet
+@char CH-Soapia pose:Speaking
+CH-Soapia: I’m a classy gal with an adventurous spirit; I want to brunch and then do some sky diving. (giggles)
+
+@char CH-Soapia pose:Quiet
+@char CH-Host pose:Speaking
+CH-Host: Shouldn’t you jump first and then eat? Sorry I don’t want to fall into ducksplaining.
+
+@char CH-Host pose:Quiet
+@char CH-Chewy pose:Speaking
+CH-Chewy: I would take you to the Roundiversal Studios OverLook, Drive down Ballholand Drive, and finish up with some cuddling
+
+@char CH-Chewy pose:Quiet
+@char CH-Host pose:Speaking
+CH-Host: Wowza! Someone took it to the bedroom! You cant see it, but I am blushing! One more contestant.
+
+@char CH-Host pose:Quiet
+@char CH-Thursday pose:Speaking
+CH-Thursday: Lay down in the lawn, look at the stars and the moon all night. Then, I beg you, pls, take me home cause I can only sleep in my bed.
+
+@char CH-Thursday pose:Quiet
+@char CH-Host pose:Speaking
+CH-Host: Nature, stars and bed. They really know what they want. 
+
+@stop
+
+
+# FavoriteMovieAnswer
+CH-Chewy: Frothfe-what-u? Bro, I gotta go with the best sport story ever made. Air Sud 2 forever!
+
+CH-Thursday: Frothferatu has no equal. I liked it better than the original one with tea actor Max SpumeBarm!
+
+CH-Soapia: Im more of a beach or hiking in Funyon Canyon, but aa s classy gal I have to go with The Soapfather.
+
+CH-Host: My question would have been “What is the correct way to pronounce chimichanga?” And you better say “Chi-mee-chaang-guh”… 
+
+CH-Host: We’ll be back after a word from our sponsors. 
+@stop
+
+
+
+
+
+
+
+# REFERENCE
+@choice "Continue from the next line" set:lovePoints+=1
+@choice "Continue from the specified label" goto:.Labelname
+@stop
+CH-Host: Next line. Love Points are {lovePoints}
+@char CH-Chewy pos:80
+CH-Host: Let's play bubbles!
+CH-Chewy: Words and bubbles! Many Bubbles!
+@stop
+# Labelname
+CH-Host: Specific label

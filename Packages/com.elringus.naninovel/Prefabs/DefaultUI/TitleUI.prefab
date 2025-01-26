@@ -2970,7 +2970,7 @@ GameObject:
   - component: {fileID: 6959929889965130109}
   - component: {fileID: 2324006631378363746}
   m_Layer: 5
-  m_Name: Image
+  m_Name: CurtainsImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

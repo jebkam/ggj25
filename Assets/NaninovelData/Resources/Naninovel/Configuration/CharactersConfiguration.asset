@@ -68,7 +68,7 @@ MonoBehaviour:
     ids:
     - CH-Player
     - CH-Host
-    - CH-Chuwy
+    - CH-Chewy
     - CH-Soapia
     - CH-Thursday
     metas:
@@ -110,7 +110,7 @@ MonoBehaviour:
       PlaceOnTop: 1
       HighlightDuration: 0.35
       HighlightEasing: 1
-      MessageSound: 
+      MessageSound: SFX_Bubble_Pop_01
       MessageSoundPlayback: 0
       VoiceSource: {fileID: 0}
       LinkedPrinter: 
@@ -173,7 +173,7 @@ MonoBehaviour:
       PlaceOnTop: 1
       HighlightDuration: 0.35
       HighlightEasing: 1
-      MessageSound: SFX_Bubble_Pop_01
+      MessageSound: SFX_Bubble_Pop_02
       MessageSoundPlayback: 0
       VoiceSource: {fileID: 0}
       LinkedPrinter: 
@@ -205,7 +205,7 @@ MonoBehaviour:
         height: 1
       BakedLookDirection: 1
       HasName: 1
-      DisplayName: Chuwy
+      DisplayName: Chewy
       UseCharacterColor: 0
       NameColor: {r: 1, g: 1, b: 1, a: 1}
       MessageColor: {r: 1, g: 1, b: 1, a: 1}
@@ -216,7 +216,7 @@ MonoBehaviour:
       PlaceOnTop: 1
       HighlightDuration: 0.35
       HighlightEasing: 1
-      MessageSound: 
+      MessageSound: SFX_Bubble_Pop_05
       MessageSoundPlayback: 0
       VoiceSource: {fileID: 0}
       LinkedPrinter: 
@@ -259,7 +259,7 @@ MonoBehaviour:
       PlaceOnTop: 1
       HighlightDuration: 0.35
       HighlightEasing: 1
-      MessageSound: 
+      MessageSound: SFX_Bubble_Pop_04
       MessageSoundPlayback: 0
       VoiceSource: {fileID: 0}
       LinkedPrinter: 
@@ -302,7 +302,7 @@ MonoBehaviour:
       PlaceOnTop: 1
       HighlightDuration: 0.35
       HighlightEasing: 1
-      MessageSound: 
+      MessageSound: SFX_Bubble_Pop_06
       MessageSoundPlayback: 0
       VoiceSource: {fileID: 0}
       LinkedPrinter: 
@@ -314,7 +314,29 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
     - Naninovel.ProjectResourceProvider, Elringus.Naninovel.Runtime, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  SharedPoses: []
+  SharedPoses:
+  - name: Speaking
+    actorState:
+      appearance: 
+      visible: 0
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+      scale: {x: 0, y: 0, z: 0}
+      tintColor: {r: 1, g: 1, b: 1, a: 1}
+      lookDirection: 0
+    overriddenProperties:
+    - tintColor
+  - name: Quiet
+    actorState:
+      appearance: 
+      visible: 0
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+      scale: {x: 0, y: 0, z: 0}
+      tintColor: {r: 0.3584906, g: 0.33650768, b: 0.33650768, a: 1}
+      lookDirection: 0
+    overriddenProperties:
+    - tintColor
   references:
     version: 2
     RefIds:

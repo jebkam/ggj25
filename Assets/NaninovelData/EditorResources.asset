@@ -151,7 +151,7 @@ MonoBehaviour:
       guid: b56b662fd5c594988aa5c79954e3b566
     - name: BG-Stage
       pathPrefix: Backgrounds/MainBackground
-      guid: 85668e8a0b3be4de5bdae4c16b3fe91b
+      guid: 2681710d92f234233b30b580eb08f32a
   - Id: Characters/2fecf887-42d1-41a2-b5d3-2a6cafc02297
     Resources:
     - name: Host
@@ -167,13 +167,13 @@ MonoBehaviour:
     - name: 
       pathPrefix: Scripts
       guid: 
-    - name: scr_01
+    - name: Nani_Love-Bubble
       pathPrefix: Scripts
       guid: 2bfb9803d1ba6465f836b14ec05e74b7
   - Id: Characters/a84f0262-54d5-47b6-a73d-1ca2c364a8d4
     Resources:
     - name: Neutral
-      pathPrefix: Characters/CH-Chuwy
+      pathPrefix: Characters/CH-Chewy
       guid: f86b5c8aa34b94196bff4bdb11725b04
   - Id: Characters/6d2a8763-3bfb-43a2-bda8-a0df54fed500
     Resources:
@@ -220,3 +220,13 @@ MonoBehaviour:
     - name: SFX_Contestant_happy_reaction
       pathPrefix: Audio
       guid: 3ca027cd65a94472595b3dfcfca602b9
+  - Id: Characters/813fef27-3d31-4905-a2f3-6fdcf76b2c1a
+    Resources:
+    - name: Neutral
+      pathPrefix: Characters/CH-Soapia
+      guid: f86b5c8aa34b94196bff4bdb11725b04
+  - Id: Characters/42ff3720-3505-43a9-a4ff-1c17435e948e
+    Resources:
+    - name: Neutral
+      pathPrefix: Characters/CH-Thursday
+      guid: f86b5c8aa34b94196bff4bdb11725b04
