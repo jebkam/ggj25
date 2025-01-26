@@ -242,17 +242,7 @@ MonoBehaviour:
       VoiceSource: {fileID: 0}
       LinkedPrinter: 
       Poses:
-      - name: 
-        actorState:
-          appearance: 
-          visible: 0
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0, w: 0}
-          scale: {x: 0, y: 0, z: 0}
-          tintColor: {r: 0, g: 0, b: 0, a: 0}
-          lookDirection: 0
-        overriddenProperties: []
-      - name: 
+      - name: Host
         actorState:
           appearance: 
           visible: 0

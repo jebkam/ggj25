@@ -1,17 +1,29 @@
-@char ch00 pose:Action
+; SETUP
+@char ch_01-host 
 @back Environment_LaffAttic_Date-1
-ch00: Hello world!
-ch00: Let's make some choices!
-@choice "Continue from the next line" ;set:lovePoints+1
+
+; START
+@char ch_01-host look:Left pos:20
+@wait 1
+@char ch_01-host look:Right pos:50
+@wait 1
+ch_01-host: Hello world! 
+
+
+ch_01-host: Let's make some choices!
+@choice "Continue from the next line" set:lovePoints+=1
 @choice "Continue from the specified label" goto:.Labelname
-
-
 @stop
 
 
-ch00: Next line.
+ch_01-host: Next line. Love Points are {lovePoints}
 @stop
 
 #Labelname
-ch00: Specific label
+ch_01-host: Specific label
+@input playerName summary:"What's your name?" 
+
+@stop
+
+ch_01-host: Hello, {playerName}!
 @stop
