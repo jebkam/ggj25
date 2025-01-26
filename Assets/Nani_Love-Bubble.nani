@@ -22,7 +22,7 @@ CH-Host: We start with our main character of the night, please everyone give a r
 @input playerName summary:"What's your name?"
 @stop
 
-CH-Host: {playerName} is in between 4 feet and 6’ 10, likes long floatings on the beach and it has a perfect round shape for it is a bubble.
+CH-Host: {playerName} is in between 4 feet and 6’ 10", likes long floatings on the beach and it has a perfect round shape for it is a bubble.
 
 
 
@@ -47,12 +47,12 @@ CH-Chewy: I’m so strong I can lift up any lady, and I have a cat named Bobba, 
 @char CH-Host pose:Speaking
 CH-Host: Last but not least, directly from Foamrida, they're a software engineer everyday, but their name is THURSDAY!
 
-
 @char CH-Host pose:Quiet
 @char CH-Thursday pos:15 pose:Speaking
 CH-Thursday: Sup?
 
 @char CH-Thursday pose:Quiet
+
 
 # Round1
 @char CH-Host pose:Speaking
@@ -91,17 +91,24 @@ CH-Thursday: Lay down in the lawn, look at the stars and the moon all night. The
 @char CH-Thursday pose:Quiet
 @char CH-Host pose:Speaking
 CH-Host: Nature, stars and bed. They really know what they want. 
-
 @stop
 
 
 # FavoriteMovieAnswer
+@char CH-Host pose:Quiet
+@char CH-Chewy pose:Speaking
 CH-Chewy: Frothfe-what-u? Bro, I gotta go with the best sport story ever made. Air Sud 2 forever!
 
+@char CH-Chewy pose:Quiet
+@char CH-Thursday pose:Speaking
 CH-Thursday: Frothferatu has no equal. I liked it better than the original one with tea actor Max SpumeBarm!
 
+@char CH-Thursday pose:Quiet
+@char CH-Soapia pose:Speaking
 CH-Soapia: Im more of a beach or hiking in Funyon Canyon, but aa s classy gal I have to go with The Soapfather.
 
+@char CH-Soapia pose:Quiet
+@char CH-Host pose:Speaking
 CH-Host: My question would have been “What is the correct way to pronounce chimichanga?” And you better say “Chi-mee-chaang-guh”… 
 
 CH-Host: We’ll be back after a word from our sponsors. 
