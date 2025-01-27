@@ -1,9 +1,9 @@
 ; SETUP
 @char CH-Host
 @back BG-Stage
-@bgm BGM_Show fade:3
 
 ; START
+@bgm Game_Music_Loop volume:0.25 intro:Music_Stinger
 @char CH-Host look:Left pos:20 time:0
 @wait 1
 @char CH-Host look:Right pos:80 time:0
@@ -13,21 +13,21 @@
 
 # ShowStart
 CH-Host: Welcome to The Love Bubble! 
-CH-Host: I’m your host Rubby Seacrest. 
-CH-Host: In tonight's show a happy couple of bubbles will find love forever, or be popped for ever. Haha! (*wink*)
-CH-Host: We start with our main character of the night, please everyone give a round go applause to! 
+CH-Host: I’m your host/ess Rubby Seacrest. 
+CH-Host: In tonight's show a happy couple of bubbles will find love forever, or be popped forever. Haha! (*wink*)
+CH-Host: We start with our main character of the night, please everyone give a round of applause to {playerName}! 
 
 @input playerName summary:"What's your name?"
 @stop
 
-CH-Host: {playerName} is in between 4 feet and 6’ 10", likes long floatings on the beach and it has a perfect round shape for it is a bubble.
+CH-Host: {playerName} is in between 4 feet and 6’ 10, likes long floatings on the beach and it has a perfect round shape for it is a bubble.
 
 
 
 # Contestants
 CH-Host: And now, the first of three fabulous and bubbly contestants! 
 
-CH-Host: She’s here to sweep you of your feet, she has perfect film and her name is SOAPIA!
+CH-Host: She’s here to sweep you off your feet, she has perfect film and her name is SOAPIA!
 
 @char CH-Host pose:Quiet
 @char CH-Soapia pos:55 pose:Speaking
@@ -103,11 +103,11 @@ CH-Chewy: Frothfe-what-u? Bro, I gotta go with the best sport story ever made. A
 
 @char CH-Chewy pose:Quiet
 @char CH-Thursday pose:Speaking
-CH-Thursday: Frothferatu has no equal. I liked it better than the original one with tea actor Max SpumeBarm!
+CH-Thursday: Frothferatu has no equal. I liked it better than the original one with the actor Max SpumeBarm!
 
 @char CH-Thursday pose:Quiet
 @char CH-Soapia pose:Speaking
-CH-Soapia: Im more of a beach or hiking in Funyon Canyon, but aa s classy gal I have to go with The Soapfather.
+CH-Soapia: Im more of a beach or hiking in Funyon Canyon, but as a classy gal I have to go with The Soapfather.
 
 @char CH-Soapia pose:Quiet
 @char CH-Host pose:Speaking
@@ -122,6 +122,8 @@ CH-Host: We’ll be back after a word from our sponsors.
 
 
 # Round2
+@stopBgm
+@bgm Game_Music_Sped_up volume:0.5
 CH-Host: And we are back! 
 CH-Host: This time for Round 2.
 CH-Host: Fight! 
@@ -152,19 +154,19 @@ CH-Host: Is it pronounced “Los Feelix” or “Los Faeleez"? Thursday = {point
 CH-Host: Puerto Rico or Costa Rica? Its not the same. Thursday = {pointsThursday} Chewy = {pointsChewy} Soapia = {pointsSoapia} . 
 @choice "Puerto Rico" set:pointsThursday+=1
 @choice "Costa Rica" set:pointsChewy+=1
-
 @stop
 
 CH-Host: Circle or Square? Thursday = {pointsThursday} Chewy = {pointsChewy} Soapia = {pointsSoapia} . 
 @choice Circle set:pointsChewy+=1;pointsSoapia+=1
 @choice Square set:pointsThursday+=1
-
 @stop
 
 CH-Host: Wowza! So fast! {playerName} really opened themselves up!
 
 
 # Round3
+@stopBgm
+@bgm Elimination_Music volume:0.25
 CH-Host: Aaand now, our first moment of truth, our Elimination Round!…
 
 # R3Questions
@@ -254,7 +256,7 @@ CH-Thursday: “Charming, but not my style. See you floating around. My eye line
 @goto .ShowEndNo
 
 # SoapiaNo
-CH-Soapia: “How sweet! I’m flattered, but ‘m not interested. Maybe we can be friends on bubble media.”
+CH-Soapia: “How sweet! I’m flattered, but I‘m not interested. Maybe we can be friends on bubble media.”
 @goto .ShowEndNo
 
 # ChewyNo
@@ -264,13 +266,17 @@ CH-Chewy: “Now that I think about it, there’s only space for me and Bobby in
 
 
 # ShowEndNo
-CH-Host: Aawww! Sorry to hear that. We have a clear No from our constant. 
+@stopBgm
+@bgm Title_Theme_Music volume:0.25
+CH-Host: Aawww! Sorry to hear that. We have a clear No from our contestant.
 CH-Host: Sorry {playerName}, looks like you’ll be doing the float of shame out of here.
 CH-Host: Don’t miss next show’s edition of Toxic Bubbles! See you then!.
 CH-Host: Thank you for playing!
 @stop
 
 # ShowEndYes
+@stopBgm
+@bgm Title_Theme_Music volume:0.25
 CH-Host: Wowza! And they’ve said Yes! 
 CH-Host: A Love Bubble have been created, my eyes have started to water. 
 CH-Host: Come back for next week episode when we will have Celebrity Floaters with Droplet Johansson and Ball Pacino!
