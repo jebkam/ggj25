@@ -9,7 +9,7 @@
 @char CH-Host look:Right pos:80 time:0
 @wait 1
 @char CH-Host look:Left pose:Speaking
-
+ @goto .Round3
 
 # ShowStart
 CH-Host: Welcome to The Love Bubble! 
@@ -183,6 +183,7 @@ CH-Host: My rubber heart just got broken in a million rubber bands, but the show
 @char CH-Host pose:Quiet
 @char CH-Chewy pos:50 pose:Speaking
 CH-Chewy: “Bro, I saw I you and thought, no way! Im not bitter, your bitter!”- (Pop!)
+@sfx SFX_Elimination_Bubble_Pop_01
 @hide CH-Chewy
 @char CH-Host pose:Speaking
 
@@ -198,6 +199,7 @@ CH-Chewy: “Bro, I saw I you and thought, no way! Im not bitter, your bitter!�
 @char CH-Host pose:Quiet
 @char CH-Soapia pos:50 pose:Speaking
 CH-Soapia: “Oh no, Darling! This is unexpected, well I guess I will cancel the Hans Simmer concert tickets- (Pop!)
+@sfx SFX_Elimination_Bubble_Pop_01
 @hide CH-Soapia
 @char CH-Host pose:Speaking
 
@@ -212,6 +214,7 @@ CH-Soapia: “Oh no, Darling! This is unexpected, well I guess I will cancel the
 @char CH-Host pose:Quiet
 @char CH-Thursday pos:50 pose:Speaking
 CH-Thursday: “Pop You!”- (Pop!).
+@sfx SFX_Elimination_Bubble_Pop_01
 @hide CH-Thursday
 @char CH-Host pose:Speaking
 @if eliminateSoapia=true
