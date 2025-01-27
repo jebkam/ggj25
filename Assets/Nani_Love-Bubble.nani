@@ -9,7 +9,6 @@
 @char CH-Host look:Right pos:80 time:0
 @wait 1
 @char CH-Host look:Left pose:Speaking
- @goto .Round3
 
 # ShowStart
 CH-Host: Welcome to The Love Bubble! 
