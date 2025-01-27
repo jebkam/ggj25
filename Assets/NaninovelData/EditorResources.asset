@@ -151,12 +151,12 @@ MonoBehaviour:
       guid: c85c9973570234e169eb4c388fc52995
     - name: BG-Stage
       pathPrefix: Backgrounds/MainBackground
-      guid: 2681710d92f234233b30b580eb08f32a
+      guid: 691090bc876a4485fa72b80e577a9854
   - Id: Characters/2fecf887-42d1-41a2-b5d3-2a6cafc02297
     Resources:
     - name: Host
       pathPrefix: Characters/CH-Host
-      guid: b8eadb52d0e4f454a90b5e899c5bd09d
+      guid: 8a2f87bd72c374c34bac3eaf9d2dd234
   - Id: Characters/336b686e-bf7e-4ee4-ae39-858a6147ee94
     Resources: []
   - Id: Scripts
@@ -244,4 +244,4 @@ MonoBehaviour:
     Resources:
     - name: Neutral
       pathPrefix: Characters/CH-Thursday
-      guid: f86b5c8aa34b94196bff4bdb11725b04
+      guid: d746352032c474daa86f06011f017b41

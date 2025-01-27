@@ -3,7 +3,7 @@
 @back BG-Stage
 
 ; START
-@bgm Game_Music_Loop volume:0.25 intro:Music_Stinger
+@bgm BGM_Show volume:0.25 intro:Music_Stinger
 @char CH-Host look:Left pos:20 time:0
 @wait 1
 @char CH-Host look:Right pos:80 time:0
@@ -13,7 +13,7 @@
 
 # ShowStart
 CH-Host: Welcome to The Love Bubble! 
-CH-Host: I’m your host/ess Rubby Seacrest. 
+CH-Host: I’m your host duck Rubby Seacrest. 
 CH-Host: In tonight's show a happy couple of bubbles will find love forever, or be popped forever. Haha! (*wink*)
 CH-Host: We start with our main character of the night, please everyone give a round of applause to {playerName}! 
 
@@ -123,7 +123,8 @@ CH-Host: We’ll be back after a word from our sponsors.
 
 # Round2
 @stopBgm
-@bgm Game_Music_Sped_up volume:0.5
+@bgm BGM_Show_FF volume:0.75 
+
 CH-Host: And we are back! 
 CH-Host: This time for Round 2.
 CH-Host: Fight! 
@@ -131,32 +132,27 @@ CH-Host: Just kidding! Haha (*wink*).
 CH-Host: It’s Flash Round time! Our beloved {playerName} has to answer swiftly or you might be the one popping out of here tonight!
 
 # R2Questions
-CH-Host: Dogs or Cats? Thursday = {pointsThursday} Chewy = {pointsChewy} Soapia = {pointsSoapia} . 
+CH-Host: Dogs or Cats? 
 @choice Dogs set:pointsSoapia+=1
 @choice Cats set:pointsChewy+=1
 @stop
 
-
-
-CH-Host: Bar Soap or Shower Gel? Thursday = {pointsThursday} Chewy = {pointsChewy} Soapia = {pointsSoapia} . 
+CH-Host: Bar Soap or Shower Gel? 
 @choice "Bar Soap" set:pointsThursday+=1;pointsChewy+=1
 @choice "Shower Gel" set:pointsSoapia+=1
-
 @stop
 
-CH-Host: Is it pronounced “Los Feelix” or “Los Faeleez"? Thursday = {pointsThursday} Chewy = {pointsChewy} Soapia = {pointsSoapia} . 
+CH-Host: Is it pronounced “Los Feelix” or “Los Faeleez"?
 @choice "Los Feelix" set:pointsSoapia+=1
 @choice "Los Faeleez" set:pointsThursday+=1
-
 @stop
 
-
-CH-Host: Puerto Rico or Costa Rica? Its not the same. Thursday = {pointsThursday} Chewy = {pointsChewy} Soapia = {pointsSoapia} . 
+CH-Host: Puerto Rico or Costa Rica? Its not the same. 
 @choice "Puerto Rico" set:pointsThursday+=1
 @choice "Costa Rica" set:pointsChewy+=1
 @stop
 
-CH-Host: Circle or Square? Thursday = {pointsThursday} Chewy = {pointsChewy} Soapia = {pointsSoapia} . 
+CH-Host: Circle or Square? 
 @choice Circle set:pointsChewy+=1;pointsSoapia+=1
 @choice Square set:pointsThursday+=1
 @stop
@@ -166,7 +162,7 @@ CH-Host: Wowza! So fast! {playerName} really opened themselves up!
 
 # Round3
 @stopBgm
-@bgm Elimination_Music volume:0.25
+@bgm BGM_Elimination volume:0.25 
 CH-Host: Aaand now, our first moment of truth, our Elimination Round!…
 
 # R3Questions
@@ -184,7 +180,12 @@ CH-Host: My rubber heart just got broken in a million rubber bands, but the show
 
 # EliminateChewy
 
+@char CH-Host pose:Quiet
+@char CH-Chewy pos:50 pose:Speaking
 CH-Chewy: “Bro, I saw I you and thought, no way! Im not bitter, your bitter!”- (Pop!)
+@hide CH-Chewy
+@char CH-Host pose:Speaking
+
 @if eliminateThursday=true
     @goto .FinalChoice
 @if eliminateSoapia=true
@@ -194,7 +195,12 @@ CH-Chewy: “Bro, I saw I you and thought, no way! Im not bitter, your bitter!�
 
 
 # EliminateSoapia
+@char CH-Host pose:Quiet
+@char CH-Soapia pos:50 pose:Speaking
 CH-Soapia: “Oh no, Darling! This is unexpected, well I guess I will cancel the Hans Simmer concert tickets- (Pop!)
+@hide CH-Soapia
+@char CH-Host pose:Speaking
+
 @if eliminateThursday=true
     @goto .FinalChoice
 @if eliminateChewy=true
@@ -203,7 +209,11 @@ CH-Soapia: “Oh no, Darling! This is unexpected, well I guess I will cancel the
 
 
 # EliminateThursday
+@char CH-Host pose:Quiet
+@char CH-Thursday pos:50 pose:Speaking
 CH-Thursday: “Pop You!”- (Pop!).
+@hide CH-Thursday
+@char CH-Host pose:Speaking
 @if eliminateSoapia=true
     @goto .FinalChoice
 @if eliminateChewy=true
@@ -237,37 +247,50 @@ CH-Host: Let’s see what the chosen feels…
 
 
 # ThursdayYes
+@char CH-Host pose:Quiet
+@char CH-Thursday pos:50 pose:Speaking
 CH-Thursday: “You will look so good with eyeliner! I say Yes! Let’s go watch Frothferatu!
 @goto .ShowEndYes
 
 # SoapiaYes
+@char CH-Host pose:Quiet
+@char CH-Soapia pos:50 pose:Speaking
 CH-Soapia: ‘Well, If you like me and I like you then, Yes! Two tickets for Micheal Bublé please! (*giggles*)
 @goto .ShowEndYes
 
 
 # ChewyYes
+@char CH-Host pose:Quiet
+@char CH-Chewy pos:50 pose:Speaking
 CH-Chewy: Alright, Yes, lets do it! Can’t wait for you to meet Bobba. Next stop, Ballholland Drive!
 @goto .ShowEndYes
 
 
 
 # ThursdayNo
+@char CH-Host pose:Quiet
+@char CH-Thursday pos:50 pose:Speaking
 CH-Thursday: “Charming, but not my style. See you floating around. My eye liner’s wearing off, I gotta go.”
 @goto .ShowEndNo
 
 # SoapiaNo
+@char CH-Host pose:Quiet
+@char CH-Soapia pos:50 pose:Speaking
 CH-Soapia: “How sweet! I’m flattered, but I‘m not interested. Maybe we can be friends on bubble media.”
 @goto .ShowEndNo
 
 # ChewyNo
+@char CH-Host pose:Quiet
+@char CH-Chewy pos:50 pose:Speaking
 CH-Chewy: “Now that I think about it, there’s only space for me and Bobby in my bachelor pad.
 @goto .ShowEndNo
 
 
 
 # ShowEndNo
+@char CH-Host pose:Speaking
 @stopBgm
-@bgm Title_Theme_Music volume:0.25
+@bgm BGM_Title volume:0.25
 CH-Host: Aawww! Sorry to hear that. We have a clear No from our contestant.
 CH-Host: Sorry {playerName}, looks like you’ll be doing the float of shame out of here.
 CH-Host: Don’t miss next show’s edition of Toxic Bubbles! See you then!.
@@ -275,8 +298,9 @@ CH-Host: Thank you for playing!
 @stop
 
 # ShowEndYes
+@char CH-Host pose:Speaking
 @stopBgm
-@bgm Title_Theme_Music volume:0.25
+@bgm BGM_Title volume:0.25
 CH-Host: Wowza! And they’ve said Yes! 
 CH-Host: A Love Bubble have been created, my eyes have started to water. 
 CH-Host: Come back for next week episode when we will have Celebrity Floaters with Droplet Johansson and Ball Pacino!
