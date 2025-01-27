@@ -165,7 +165,7 @@ CH-Host: Wowza! So fast! {playerName} really opened themselves up!
 CH-Host: Aaand now, our first moment of truth, our Elimination Round!…
 
 # R3Questions
-CH-Host: YOU have to choose TWO contestants to eliminate. It’s a hard decision, but thats life, haha! (*wink*)
+CH-Host: {playerName} have to choose TWO contestants to eliminate. It’s a hard decision, but thats life, haha! (*wink*)
 @if eliminateChewy=false
     @choice Chewy set:eliminateChewy=true goto:.EliminateChewy
 @if eliminateSoapia=false
@@ -252,12 +252,16 @@ CH-Host: Let’s see what the chosen feels…
 @char CH-Host pose:Quiet
 @char CH-Thursday pos:50 pose:Speaking
 CH-Thursday: “You will look so good with eyeliner! I say Yes! Let’s go watch Frothferatu!
+@hide CH-Thursday
+
 @goto .ShowEndYes
 
 # SoapiaYes
 @char CH-Host pose:Quiet
 @char CH-Soapia pos:50 pose:Speaking
 CH-Soapia: ‘Well, If you like me and I like you then, Yes! Two tickets for Micheal Bublé please! (*giggles*)
+@hide CH-Soapia
+
 @goto .ShowEndYes
 
 
@@ -265,6 +269,8 @@ CH-Soapia: ‘Well, If you like me and I like you then, Yes! Two tickets for Mic
 @char CH-Host pose:Quiet
 @char CH-Chewy pos:50 pose:Speaking
 CH-Chewy: Alright, Yes, lets do it! Can’t wait for you to meet Bobba. Next stop, Ballholland Drive!
+@hide CH-Chewy
+
 @goto .ShowEndYes
 
 
@@ -273,18 +279,24 @@ CH-Chewy: Alright, Yes, lets do it! Can’t wait for you to meet Bobba. Next sto
 @char CH-Host pose:Quiet
 @char CH-Thursday pos:50 pose:Speaking
 CH-Thursday: “Charming, but not my style. See you floating around. My eye liner’s wearing off, I gotta go.”
+@hide CH-Thursday
+
 @goto .ShowEndNo
 
 # SoapiaNo
 @char CH-Host pose:Quiet
 @char CH-Soapia pos:50 pose:Speaking
 CH-Soapia: “How sweet! I’m flattered, but I‘m not interested. Maybe we can be friends on bubble media.”
+@hide CH-Soapia
+
 @goto .ShowEndNo
 
 # ChewyNo
 @char CH-Host pose:Quiet
 @char CH-Chewy pos:50 pose:Speaking
 CH-Chewy: “Now that I think about it, there’s only space for me and Bobby in my bachelor pad.
+@hide CH-Chewy
+
 @goto .ShowEndNo
 
 

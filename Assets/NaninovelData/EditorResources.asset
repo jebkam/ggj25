@@ -151,7 +151,7 @@ MonoBehaviour:
       guid: c85c9973570234e169eb4c388fc52995
     - name: BG-Stage
       pathPrefix: Backgrounds/MainBackground
-      guid: 691090bc876a4485fa72b80e577a9854
+      guid: a45ec4e39a56f4971828ffc738340df2
   - Id: Characters/2fecf887-42d1-41a2-b5d3-2a6cafc02297
     Resources:
     - name: Host
