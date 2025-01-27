@@ -10,7 +10,6 @@
 @wait 1
 @char CH-Host look:Left pose:Speaking
 
-@goto .Round2
 
 # ShowStart
 CH-Host: Welcome to The Love Bubble! 
@@ -170,42 +169,112 @@ CH-Host: Aaand now, our first moment of truth, our Elimination Round!…
 
 # R3Questions
 CH-Host: YOU have to choose TWO contestants to eliminate. It’s a hard decision, but thats life, haha! (*wink*)
-@choice Chewy
-@choice Soapia
-@choice Thursday
+@if eliminateChewy=false
+    @choice Chewy set:eliminateChewy=true goto:.EliminateChewy
+@if eliminateSoapia=false
+    @choice Soapia set:eliminateSoapia=true goto:.EliminateSoapia
+@if eliminateThursday=false
+    @choice Thursday set:eliminateThursday=true goto:.EliminateThursday
 @stop
 
 
 CH-Host: My rubber heart just got broken in a million rubber bands, but the show must go on we are moving to our final round, the Final Choice!
 
+# EliminateChewy
+
+CH-Chewy: “Bro, I saw I you and thought, no way! Im not bitter, your bitter!”- (Pop!)
+@if eliminateThursday=true
+    @goto .FinalChoice
+@if eliminateSoapia=true
+    @goto .FinalChoice
+@goto .R3Questions
+
+
+
+# EliminateSoapia
+CH-Soapia: “Oh no, Darling! This is unexpected, well I guess I will cancel the Hans Simmer concert tickets- (Pop!)
+@if eliminateThursday=true
+    @goto .FinalChoice
+@if eliminateChewy=true
+    @goto .FinalChoice
+@goto .R3Questions
+
+
+# EliminateThursday
+CH-Thursday: “Pop You!”- (Pop!).
+@if eliminateSoapia=true
+    @goto .FinalChoice
+@if eliminateChewy=true
+    @goto .FinalChoice
+@goto .R3Questions
+
+
+
 # FinalChoice
 CH-Host: RUBBY: Now our chosen one is going to decide if this Love Bubble is going to happen or if {playerName} is going to Pop. 
 CH-Host: Let’s see what the chosen feels…
 
+@if eliminateSoapia=eliminateThursday
+    @if pointsChewy>2
+        @goto .ChewyYes
+    @if pointsChewy<2
+        @goto .ChewyNo
 
-# FCYes
+@if eliminateSoapia=eliminateChewy
+    @if pointsThursday>2
+        @goto .ThursdayYes
+    @if pointsThursday<2
+        @goto .ThursdayNo
+
+@if eliminateThursday=eliminateChewy
+    @if pointsSoapia>2
+        @goto .SoapiaYes
+    @if pointsSoapia<2
+        @goto .SoapiaNo
+
+
+
+# ThursdayYes
 CH-Thursday: “You will look so good with eyeliner! I say Yes! Let’s go watch Frothferatu!
+@goto .ShowEndYes
+
+# SoapiaYes
 CH-Soapia: ‘Well, If you like me and I like you then, Yes! Two tickets for Micheal Bublé please! (*giggles*)
+@goto .ShowEndYes
+
+
+# ChewyYes
 CH-Chewy: Alright, Yes, lets do it! Can’t wait for you to meet Bobba. Next stop, Ballholland Drive!
+@goto .ShowEndYes
 
 
 
-# FCNo
+# ThursdayNo
 CH-Thursday: “Charming, but not my style. See you floating around. My eye liner’s wearing off, I gotta go.”
+@goto .ShowEndNo
+
+# SoapiaNo
 CH-Soapia: “How sweet! I’m flattered, but ‘m not interested. Maybe we can be friends on bubble media.”
+@goto .ShowEndNo
+
+# ChewyNo
 CH-Chewy: “Now that I think about it, there’s only space for me and Bobby in my bachelor pad.
+@goto .ShowEndNo
 
 
 
-# ShowEnd
+# ShowEndNo
 CH-Host: Aawww! Sorry to hear that. We have a clear No from our constant. 
 CH-Host: Sorry {playerName}, looks like you’ll be doing the float of shame out of here.
 CH-Host: Don’t miss next show’s edition of Toxic Bubbles! See you then!.
 CH-Host: Thank you for playing!
+@stop
 
+# ShowEndYes
 CH-Host: Wowza! And they’ve said Yes! 
 CH-Host: A Love Bubble have been created, my eyes have started to water. 
 CH-Host: Come back for next week episode when we will have Celebrity Floaters with Droplet Johansson and Ball Pacino!
 CH-Host: Thank you for playing!
+@stop
 
 

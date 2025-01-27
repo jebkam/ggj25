@@ -25,3 +25,9 @@ MonoBehaviour:
     value: false
   - name: answeredQ2
     value: false
+  - name: eliminateChewy
+    value: false
+  - name: eliminateSoapia
+    value: false
+  - name: eliminateThursday
+    value: false
