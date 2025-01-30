@@ -1,0 +1,8 @@
+; SETUP
+@back BG-Curtain time:3
+@bgm BGM_Title volume:0.25
+@stop
+
+# OnNewGame
+@stopBgm
+@stop

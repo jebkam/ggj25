@@ -1,0 +1,543 @@
+;Curtains sequence
+@await
+    @char BG-Curtain-Left pos:50,0,0 time:1
+    @char BG-Curtain-Right pos:50,0,0 time:1
+    @slide BG-Curtain-Left from:50 to:-50 time:1.5
+    @slide BG-Curtain-Right from:50 to:150 time:1.5
+    @wait 0.25
+    @hide BG-Curtain-Left,BG-Curtain-Right time:2
+
+@back BG-Stage time:1
+@char CH-Host pos:200,0
+@bgm BGM_Show volume:0.25 intro:Music_Stinger
+
+;Host walk-in
+@await
+    @wait 0.5
+    @char CH-Host look:Left pose:Left pos:20,0 time:0.25
+    @wait 1.5
+    @char CH-Host look:Right pose:Right pos:80,0 time:0.25
+    @wait 1.5
+    @char CH-Host look:Left pose:Center pos:50,0 time:0.25
+    @wait 1
+    @char CH-Host pose:Zoom-In pose:Speaking pos:50,-35 time:1
+    @wait 0.5
+
+
+
+
+# ShowStart
+@save
+CH-Host: Welcome to The Love Bubble! 
+@char CH-Host look:Right pos:65,-35
+CH-Host: I’m your host duck Rubby Seacrest. 
+@char CH-Host look:Left pos:50,-35
+CH-Host: In tonight's show a happy couple of bubbles will find love forever, or be popped forever. Haha! (*wink*)
+@input playerName summary:"What's your name?"
+@stop
+
+CH-Host: We start with our main character of the night, please everyone give a round of applause to {playerName}! 
+CH-Host: {playerName} is in between 4 feet and 6’ 10, likes long floatings on the beach and it has a perfect round shape for it is a bubble.
+
+
+
+# Contestants
+CH-Host: And now, the first of three fabulous and bubbly contestants! 
+@char CH-Host pose:Zoom-Out pose:Right  pos:80,0 time:1
+CH-Host: She’s here to sweep you off your feet, she has perfect film and her name is SOAPIA!
+@char CH-Host pose:Quiet
+
+@char CH-Soapia pos:50 pose:Speaking
+CH-Soapia: Hello darlings! If you choose me we’ll shine together. 
+CH-Soapia: I’m ready to float to where the wind takes us.
+@char CH-Soapia pose:Quiet 
+@char CH-Soapia pose:Left-Center pos:55,25 scale:0.75
+
+@char CH-Host pose:Speaking
+CH-Host: Contestant number 2 is strong to the “tea”, for he owns a Bobba Tea shop, he has a cat and drives an electric bubble. 
+CH-Host: This is CHEWY!
+@char CH-Host pose:Quiet
+
+@char CH-Chewy pos:50 pose:Speaking
+CH-Chewy: I’m so strong I can lift up any lady, and I have a cat named Bobba, like the tea, get it? 
+CH-Chewy: I'm also funny bro.
+@char CH-Chewy pose:Quiet
+@char CH-Chewy pose:Left-Center pos:35,25 scale:0.75
+
+@char CH-Host pose:Speaking
+CH-Host: Last but not least, directly from Foamrida, they're a software engineer everyday, but their name is THURSDAY!
+@char CH-Host pose:Quiet
+
+@char CH-Thursday pos:50 pose:Speaking
+CH-Thursday: Sup?
+@char CH-Thursday pose:Quiet
+@char CH-Thursday pose:Left-Center pos:15,25 scale:0.75
+
+
+
+# Round1
+@save
+@char CH-Host pose:Speaking
+CH-Host:  For our first segment {playerName} will ask our contestants a couple of inquiries to break the ice, Let the games begin! 
+
+
+
+# R1Questions
+CH-Host: Which question will you ask?
+@if answeredQ1=false    
+    @choice "Ask about ideal dates" goto:.IdealDateAnswer 
+
+@if answeredQ2=false    
+    @choice "Ask about favorite movies" goto:.FavoriteMovieAnswer 
+@stop
+
+
+
+# IdealDateAnswer
+CH-Player: What would be you ideal date scenario?
+@char CH-Host pose:Quiet
+
+@char CH-Soapia pose:Speaking 
+@char CH-Soapia pose:Zoom-In pos:50,-65,0
+CH-Soapia: I’m a classy gal with an adventurous spirit; I want to brunch and then do some sky diving. (giggles)
+@char CH-Soapia pose:Quiet
+@char CH-Soapia pose:Zoom-Out pos:55,25,10 scale:0.75
+
+@char CH-Host pose:Speaking
+CH-Host: Shouldn’t you jump first and then eat? Sorry I don’t want to fall into ducksplaining.
+@char CH-Host pose:Quiet
+
+@char CH-Chewy pose:Speaking
+@char CH-Chewy pose:Zoom-In pos:50,-65,0
+CH-Chewy: I would take you to the Roundiversal Studios OverLook, Drive down Ballholand Drive, and finish up with some cuddling
+@char CH-Chewy pose:Quiet
+@char CH-Chewy pose:Zoom-Out pos:35,25,10 scale:0.75
+
+@char CH-Host pose:Speaking
+CH-Host: Wowza! Someone took it to the bedroom! You cant see it, but I am blushing! One more contestant.
+@char CH-Host pose:Quiet
+
+@char CH-Thursday pose:Speaking
+@char CH-Thursday pose:Zoom-In pos:50,-65,0
+CH-Thursday: Lay down in the lawn, look at the stars and the moon all night. Then, I beg you, pls, take me home cause I can only sleep in my bed.
+@char CH-Thursday pose:Quiet
+@char CH-Thursday pose:Zoom-Out pos:15,25,10 scale:0.75
+
+@char CH-Host pose:Speaking
+CH-Host: Nature, stars and bed. They really know what they want. 
+
+@if answeredQ2=true 
+    @goto .R1End
+
+@hideUI "Ask about ideal dates"
+@set answeredQ1=true
+@goto .R1Questions
+
+
+
+# FavoriteMovieAnswer
+CH-Player: Frothferatu, Air Sud 2 or The Soapfather, what’s your favorite movie, and why is it The Soapfather?
+@char CH-Host pose:Quiet
+@char CH-Chewy pose:Speaking
+@char CH-Chewy pose:Zoom-In pos:50,-65,0
+CH-Chewy: Frothfe-what-u? Bro, I gotta go with the best sport story ever made. Air Sud 2 forever!
+@char CH-Chewy pose:Zoom-Out pos:35,25,10 scale:0.75
+
+@char CH-Chewy pose:Quiet
+@char CH-Thursday pose:Speaking
+@char CH-Thursday pose:Zoom-In pos:50,-65,0
+CH-Thursday: Frothferatu has no equal. I liked it better than the original one with the actor Max SpumeBarm!
+@char CH-Thursday pose:Zoom-Out pos:15,25,10 scale:0.75
+@char CH-Thursday pose:Quiet
+
+@char CH-Soapia pose:Speaking
+@char CH-Soapia pose:Zoom-In pos:50,-65,0
+CH-Soapia: Im more of a beach or hiking in Funyon Canyon, but as a classy gal I have to go with The Soapfather.
+@char CH-Soapia pose:Quiet
+@char CH-Soapia pose:Zoom-Out pos:55,25,10 scale:0.75
+
+@if answeredQ1=true 
+    @goto .R1End
+
+@hideUI "Ask about favorite movies"
+@set answeredQ2=true
+@goto .R1Questions
+
+
+
+# R1End
+@char CH-Host pose:Speaking
+@char CH-Host look:Left pose:Zoom-In pose:Speaking pos:50,-35,0
+CH-Host: My question would have been “What is the correct way to pronounce chimichanga?” And you better say “Chi-mee-chaang-guh”… 
+CH-Host: We’ll be back after a word from our sponsors. 
+@char CH-Host look:Left pose:Zoom-Out pos:80,0,0 time:1
+@char CH-Host pose:Quiet
+@wait 1.5
+@goto .Round2
+
+
+
+# Round2
+@save
+@stopBgm
+@bgm BGM_Show_FF volume:0.75 
+@char CH-Host pose:Speaking
+@char CH-Host look:Left pose:Zoom-In pose:Speaking pos:50,-35,0
+CH-Host: And we are back! 
+CH-Host: This time for Round 2.
+@char CH-Host look:Right 
+CH-Host: Fight! 
+@char CH-Host look:Left 
+CH-Host: Just kidding! Haha (*wink*). 
+CH-Host: It’s Flash Round time! Our beloved {playerName} has to answer swiftly or you might be the one popping out of here tonight!
+@char CH-Host pose:Zoom-Out pos:80,0,0 time:1
+@goto .R2Question-1
+
+
+
+# R2Question-1
+@char CH-Host look:Right 
+CH-Host: First Question! Dogs or Cats? 
+@choice "Dogs" goto:.R2Answer-Dogs
+@choice "Cats" goto:.R2Answer-Cats
+@wait 3
+@clearChoice
+
+
+
+# R2Question-2
+@char CH-Host look:Left 
+CH-Host: Second Question! Bar Soap or Shower Gel? 
+@choice "Bar Soap" goto:.R2Answer-BarSoap
+@choice "Shower Gel" goto:.R2Answer-ShowerGel
+@wait 3
+@clearChoice
+
+
+
+# R2Question-3
+@char CH-Host look:Right 
+CH-Host: Third Question! Is it pronounced “Los Feeliz” or “Los Faeleez"?
+@choice "Los Feeliz" goto:.R2Answer-LosFeeliz
+@choice "Los Faeleez" goto:.R2Answer-LosFaeleez
+@wait 3
+@clearChoice
+
+
+
+# R2Question-4
+@char CH-Host look:Left 
+CH-Host: Fourth Question! Puerto Rico or Costa Rica? Its not the same. 
+@choice "Puerto Rico" goto:.R2Answer-PuertoRico
+@choice "Costa Rica" goto:.R2Answer-CostaRica
+@wait 3
+@clearChoice
+
+
+
+# R2Question-5
+@char CH-Host look:Right 
+CH-Host: Last Question! Circle or Square? 
+@choice "Circle" goto:.R2Answer-Circle
+@choice "Square" goto:.R2Answer-Square
+@wait 3
+@clearChoice
+
+
+
+# R2End
+@char CH-Host look:Left 
+CH-Host: Wowza! So fast! {playerName} really opened themselves up!
+@goto .Round3
+
+
+
+# R2Answer-Dogs
+@await
+    @set pointsSoapia+=1
+    @char CH-Soapia.Like pose:Speaking time:1
+    @wait 1
+    @char CH-Soapia.Neutral pose:Quiet time:1
+@goto .R2Question-2
+
+
+
+# R2Answer-Cats
+@await
+    @set pointsChewy+=1 
+    @char CH-Chewy.Like pose:Speaking time:1
+    @wait 1
+    @char CH-Chewy.Neutral pose:Quiet time:1
+@goto .R2Question-2
+
+
+
+# R2Answer-BarSoap
+@await
+    @set pointsThursday+=1 
+    @char CH-Thursday.Like pose:Speaking time:1
+    @wait 1
+    @char CH-Thursday.Neutral pose:Quiet time:1
+
+    @set pointsChewy+=1 
+    @char CH-Chewy.Like pose:Speaking time:1
+    @wait 1
+    @char CH-Chewy.Neutral pose:Quiet time:1
+@goto .R2Question-3
+
+
+
+# R2Answer-ShowerGel
+@await
+    @set pointsSoapia+=1
+    @char CH-Soapia.Like pose:Speaking time:1
+    @wait 1
+    @char CH-Soapia.Neutral pose:Quiet time:1
+@goto .R2Question-3
+
+
+
+# R2Answer-LosFeeliz
+@await
+    @set pointsSoapia+=1
+    @char CH-Soapia.Like pose:Speaking time:1
+    @wait 1
+    @char CH-Soapia.Neutral pose:Quiet time:1
+@goto .R2Question-4
+
+
+
+# R2Answer-LosFaeleez
+@await
+    @set pointsThursday+=1 
+    @char CH-Thursday.Like pose:Speaking time:1
+    @wait 1
+    @char CH-Thursday.Neutral pose:Quiet time:1
+@goto .R2Question-4
+
+
+
+# R2Answer-PuertoRico
+@await
+    @set pointsThursday+=1 
+    @char CH-Thursday.Like pose:Speaking time:1
+    @wait 1
+    @char CH-Thursday.Neutral pose:Quiet time:1
+@goto .R2Question-5
+
+
+
+# R2Answer-CostaRica
+@await
+    @set pointsChewy+=1 
+    @char CH-Chewy.Like pose:Speaking time:1
+    @wait 1
+    @char CH-Chewy.Neutral pose:Quiet time:1
+@goto .R2Question-5
+
+
+
+# R2Answer-Circle
+@await
+    @set pointsChewy+=1 
+    @char CH-Chewy.Like pose:Speaking time:1
+    @wait 1
+    @char CH-Chewy.Neutral pose:Quiet time:1
+    
+    @set pointsSoapia+=1
+    @char CH-Soapia.Like pose:Speaking time:1
+    @wait 1
+    @char CH-Soapia.Neutral pose:Quiet time:1
+@goto .R2End
+
+
+
+# R2Answer-Square
+@await
+    @set pointsThursday+=1 
+    @char CH-Thursday.Like pose:Speaking time:1
+    @wait 1
+    @char CH-Thursday.Neutral pose:Quiet time:1
+@goto .R2End
+
+
+
+
+# Round3
+@save
+@stopBgm
+@bgm BGM_Elimination volume:0.25 
+CH-Host: Aaand now, our first moment of truth, our Elimination Round!…
+
+# R3Questions
+CH-Host: {playerName} have to choose TWO contestants to eliminate. It’s a hard decision, but thats life, haha! (*wink*)
+@if eliminateChewy=false
+    @choice "Chewy" goto:.EliminateChewy
+@if eliminateSoapia=false
+    @choice "Soapia" goto:.EliminateSoapia
+@if eliminateThursday=false
+    @choice "Thursday" goto:.EliminateThursday
+@stop
+
+
+# EliminateChewy
+@char CH-Host pose:Quiet
+@char CH-Chewy pos:50 pose:Speaking
+CH-Chewy: “Bro, I saw I you and thought, no way! Im not bitter, your bitter!”- (Pop!)
+@sfx SFX_Elimination_Bubble_Pop_01
+@set eliminateChewy=true
+@hide CH-Chewy
+@char CH-Host pose:Speaking
+
+@if eliminateThursday=true
+    @goto .FinalChoice
+@if eliminateSoapia=true
+    @goto .FinalChoice
+@goto .R3Questions
+
+
+
+# EliminateSoapia
+@char CH-Host pose:Quiet
+@char CH-Soapia pos:50 pose:Speaking
+CH-Soapia: “Oh no, Darling! This is unexpected, well I guess I will cancel the Hans Simmer concert tickets- (Pop!)
+@sfx SFX_Elimination_Bubble_Pop_01
+@set eliminateSoapia=true
+@hide CH-Soapia
+@char CH-Host pose:Speaking
+
+@if eliminateThursday=true
+    @goto .FinalChoice
+@if eliminateChewy=true
+    @goto .FinalChoice
+@goto .R3Questions
+
+
+# EliminateThursday
+@char CH-Host pose:Quiet
+@char CH-Thursday pos:50 pose:Speaking
+CH-Thursday: “Pop You!”- (Pop!).
+@sfx SFX_Elimination_Bubble_Pop_01
+@set eliminateThursday=true
+@hide CH-Thursday
+@char CH-Host pose:Speaking
+@if eliminateSoapia=true
+    @goto .FinalChoice
+@if eliminateChewy=true
+    @goto .FinalChoice
+@goto .R3Questions
+
+
+
+# FinalChoice
+@save
+CH-Host: My rubber heart just got broken in a million rubber bands, but the show must go on we are moving to our final round, the Final Choice!
+CH-Host: Now our chosen one is going to decide if this Love Bubble is going to happen or if {playerName} is going to Pop. 
+CH-Host: Let’s see what the chosen feels…
+
+@if eliminateSoapia=eliminateThursday
+    @if pointsChewy>2
+        @goto .ChewyYes
+    @if pointsChewy<2
+        @goto .ChewyNo
+
+@if eliminateSoapia=eliminateChewy
+    @if pointsThursday>2
+        @goto .ThursdayYes
+    @if pointsThursday<2
+        @goto .ThursdayNo
+
+@if eliminateThursday=eliminateChewy
+    @if pointsSoapia>2
+        @goto .SoapiaYes
+    @if pointsSoapia<2
+        @goto .SoapiaNo
+
+
+
+# ThursdayYes
+@char CH-Host pose:Quiet
+@char CH-Thursday pos:50 pose:Speaking
+CH-Thursday: “You will look so good with eyeliner! I say Yes! Let’s go watch Frothferatu!
+@hide CH-Thursday
+@goto .ShowEndYes
+
+
+
+# SoapiaYes
+@char CH-Host pose:Quiet
+@char CH-Soapia pos:50 pose:Speaking
+CH-Soapia: ‘Well, If you like me and I like you then, Yes! Two tickets for Micheal Bublé please! (*giggles*)
+@hide CH-Soapia
+@goto .ShowEndYes
+
+
+
+# ChewyYes
+@char CH-Host pose:Quiet
+@char CH-Chewy pos:50 pose:Speaking
+CH-Chewy: Alright, Yes, lets do it! Can’t wait for you to meet Bobba. Next stop, Ballholland Drive!
+@hide CH-Chewy
+@goto .ShowEndYes
+
+
+
+# ShowEndYes
+@char CH-Host pose:Speaking
+@stopBgm
+@bgm BGM_Title volume:0.25
+CH-Host: Wowza! And they’ve said Yes! 
+CH-Host: A Love Bubble have been created, my eyes have started to water. 
+CH-Host: Come back for next week episode when we will have Celebrity Floaters with Droplet Johansson and Ball Pacino!
+CH-Host: Thank you for playing!
+@goto .FIN
+
+
+
+# ThursdayNo
+@char CH-Host pose:Quiet
+@char CH-Thursday pos:50 pose:Speaking
+CH-Thursday: “Charming, but not my style. See you floating around. My eye liner’s wearing off, I gotta go.”
+@hide CH-Thursday
+@goto .ShowEndNo
+
+
+
+# SoapiaNo
+@char CH-Host pose:Quiet
+@char CH-Soapia pos:50 pose:Speaking
+CH-Soapia: “How sweet! I’m flattered, but I‘m not interested. Maybe we can be friends on bubble media.”
+@hide CH-Soapia
+@goto .ShowEndNo
+
+
+
+# ChewyNo
+@char CH-Host pose:Quiet
+@char CH-Chewy pos:50 pose:Speaking
+CH-Chewy: “Now that I think about it, there’s only space for me and Bobby in my bachelor pad.
+@hide CH-Chewy
+@goto .ShowEndNo
+
+
+
+# ShowEndNo
+@char CH-Host pose:Speaking
+@stopBgm
+@bgm BGM_Title volume:0.25
+CH-Host: Aawww! Sorry to hear that. We have a clear No from our contestant.
+CH-Host: Sorry {playerName}, looks like you’ll be doing the float of shame out of here.
+CH-Host: Don’t miss next show’s edition of Toxic Bubbles! See you then!.
+CH-Host: Thank you for playing!
+@goto .FIN
+
+
+# FIN
+@hide CH-Host
+@hidePrinter
+@await
+    @char BG-Curtain-Left pos:-50,0,0 time:1
+    @char BG-Curtain-Right pos:150,0,0 time:1
+    @slide BG-Curtain-Left from:-50 to:50 time:1.5
+    @slide BG-Curtain-Right from:150 to:50 time:1.5
+@stop

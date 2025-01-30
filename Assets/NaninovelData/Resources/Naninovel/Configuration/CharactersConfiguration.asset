@@ -71,6 +71,8 @@ MonoBehaviour:
     - CH-Chewy
     - CH-Soapia
     - CH-Thursday
+    - BG-Curtain-Left
+    - BG-Curtain-Right
     metas:
     - Implementation: Naninovel.NarratorCharacter, Elringus.Naninovel.Runtime, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
@@ -307,6 +309,92 @@ MonoBehaviour:
       VoiceSource: {fileID: 0}
       LinkedPrinter: 
       Poses: []
+    - Implementation: Naninovel.SpriteCharacter, Elringus.Naninovel.Runtime, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      Loader:
+        PathPrefix: Characters
+        ProviderTypes:
+        - Naninovel.AddressableResourceProvider, Elringus.Naninovel.Runtime, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        - Naninovel.ProjectResourceProvider, Elringus.Naninovel.Runtime, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      guid: 42fdb0a4-0764-4bd8-a388-2b1c653e7c0f
+      customData:
+        rid: -2
+      Pivot: {x: 0.5, y: 0}
+      PixelsPerUnit: 100
+      EnableDepthPass: 1
+      DepthAlphaCutoff: 0.5
+      CustomTextureMaterial: {fileID: 0}
+      CustomSpriteMaterial: {fileID: 0}
+      RenderTexture: {fileID: 0}
+      RenderRectangle:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1
+        height: 1
+      BakedLookDirection: 1
+      HasName: 1
+      DisplayName: 
+      UseCharacterColor: 0
+      NameColor: {r: 1, g: 1, b: 1, a: 1}
+      MessageColor: {r: 1, g: 1, b: 1, a: 1}
+      HighlightWhenSpeaking: 0
+      HighlightCharacterCount: 0
+      SpeakingPose: 
+      NotSpeakingPose: 
+      PlaceOnTop: 1
+      HighlightDuration: 0.35
+      HighlightEasing: 1
+      MessageSound: 
+      MessageSoundPlayback: 0
+      VoiceSource: {fileID: 0}
+      LinkedPrinter: 
+      Poses: []
+    - Implementation: Naninovel.SpriteCharacter, Elringus.Naninovel.Runtime, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      Loader:
+        PathPrefix: Characters
+        ProviderTypes:
+        - Naninovel.AddressableResourceProvider, Elringus.Naninovel.Runtime, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        - Naninovel.ProjectResourceProvider, Elringus.Naninovel.Runtime, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      guid: a3019c98-a776-4f84-a8ef-27f7d5beace1
+      customData:
+        rid: -2
+      Pivot: {x: 0.5, y: 0}
+      PixelsPerUnit: 100
+      EnableDepthPass: 1
+      DepthAlphaCutoff: 0.5
+      CustomTextureMaterial: {fileID: 0}
+      CustomSpriteMaterial: {fileID: 0}
+      RenderTexture: {fileID: 0}
+      RenderRectangle:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1
+        height: 1
+      BakedLookDirection: 1
+      HasName: 1
+      DisplayName: 
+      UseCharacterColor: 0
+      NameColor: {r: 1, g: 1, b: 1, a: 1}
+      MessageColor: {r: 1, g: 1, b: 1, a: 1}
+      HighlightWhenSpeaking: 0
+      HighlightCharacterCount: 0
+      SpeakingPose: 
+      NotSpeakingPose: 
+      PlaceOnTop: 1
+      HighlightDuration: 0.35
+      HighlightEasing: 1
+      MessageSound: 
+      MessageSoundPlayback: 0
+      VoiceSource: {fileID: 0}
+      LinkedPrinter: 
+      Poses: []
   AvatarLoader:
     PathPrefix: CharacterAvatars
     ProviderTypes:
@@ -337,6 +425,83 @@ MonoBehaviour:
       lookDirection: 0
     overriddenProperties:
     - tintColor
+  - name: Zoom-Out
+    actorState:
+      appearance: 
+      visible: 0
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+      scale: {x: 1, y: 1, z: 1}
+      tintColor: {r: 0.3584906, g: 0.33650768, b: 0.33650768, a: 1}
+      lookDirection: 0
+    overriddenProperties:
+    - scale
+  - name: Zoom-In
+    actorState:
+      appearance: 
+      visible: 0
+      position: {x: 0, y: -9.18, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+      scale: {x: 1.75, y: 1.75, z: 1.75}
+      tintColor: {r: 0.3584906, g: 0.33650768, b: 0.33650768, a: 1}
+      lookDirection: 0
+    overriddenProperties:
+    - scale
+  - name: Left
+    actorState:
+      appearance: 
+      visible: 0
+      position: {x: -5.76, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+      scale: {x: 1, y: 1, z: 1}
+      tintColor: {r: 0.3584906, g: 0.33650768, b: 0.33650768, a: 1}
+      lookDirection: 0
+    overriddenProperties:
+    - position
+  - name: Left-Center
+    actorState:
+      appearance: 
+      visible: 0
+      position: {x: -1.9200001, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+      scale: {x: 1, y: 1, z: 1}
+      tintColor: {r: 0.3584906, g: 0.33650768, b: 0.33650768, a: 1}
+      lookDirection: 0
+    overriddenProperties:
+    - position
+  - name: Center
+    actorState:
+      appearance: 
+      visible: 0
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+      scale: {x: 1, y: 1, z: 1}
+      tintColor: {r: 0.3584906, g: 0.33650768, b: 0.33650768, a: 1}
+      lookDirection: 0
+    overriddenProperties:
+    - position
+  - name: Center-Right
+    actorState:
+      appearance: 
+      visible: 0
+      position: {x: 1.9200001, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+      scale: {x: 1, y: 1, z: 1}
+      tintColor: {r: 0.3584906, g: 0.33650768, b: 0.33650768, a: 1}
+      lookDirection: 0
+    overriddenProperties:
+    - position
+  - name: Right
+    actorState:
+      appearance: 
+      visible: 0
+      position: {x: 5.76, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+      scale: {x: 1, y: 1, z: 1}
+      tintColor: {r: 0.3584906, g: 0.33650768, b: 0.33650768, a: 1}
+      lookDirection: 0
+    overriddenProperties:
+    - position
   references:
     version: 2
     RefIds:

@@ -154,24 +154,33 @@ MonoBehaviour:
       guid: a45ec4e39a56f4971828ffc738340df2
   - Id: Characters/2fecf887-42d1-41a2-b5d3-2a6cafc02297
     Resources:
-    - name: Host
+    - name: Neutral
       pathPrefix: Characters/CH-Host
       guid: 8a2f87bd72c374c34bac3eaf9d2dd234
   - Id: Characters/336b686e-bf7e-4ee4-ae39-858a6147ee94
     Resources: []
   - Id: Scripts
     Resources:
-    - name: Nani_Love-Bubble
-      pathPrefix: Scripts
-      guid: 2bfb9803d1ba6465f836b14ec05e74b7
     - name: scr_01
       pathPrefix: Scripts
       guid: 
+    - name: NaninovelScripts/Nani_Love-Bubble
+      pathPrefix: Scripts
+      guid: 2bfb9803d1ba6465f836b14ec05e74b7
+    - name: NaninovelScripts/Title_Love-Bubble
+      pathPrefix: Scripts
+      guid: 09e3a33cd187c45499f1ce2e4c00fba3
   - Id: Characters/a84f0262-54d5-47b6-a73d-1ca2c364a8d4
     Resources:
     - name: Neutral
       pathPrefix: Characters/CH-Chewy
       guid: 4ae3e4f245d1d4911a880e649eb2d92e
+    - name: Like
+      pathPrefix: Characters/CH-Chewy
+      guid: 1fda2e61847f34b4eb829b8cf9cb866a
+    - name: Dislike
+      pathPrefix: Characters/CH-Chewy
+      guid: 7f365fc078c99494d826fc569e600c79
   - Id: Characters/6d2a8763-3bfb-43a2-bda8-a0df54fed500
     Resources:
     - name: Neutral
@@ -240,8 +249,30 @@ MonoBehaviour:
     - name: Neutral
       pathPrefix: Characters/CH-Soapia
       guid: 560b42bae90eb4028bfc0ddc9c8e109e
+    - name: Like
+      pathPrefix: Characters/CH-Soapia
+      guid: 8fccf9ad415924e2bb37601f50cc5af5
+    - name: Dislike
+      pathPrefix: Characters/CH-Soapia
+      guid: aa757d2b999954f61b6c03e4e8139295
   - Id: Characters/42ff3720-3505-43a9-a4ff-1c17435e948e
     Resources:
     - name: Neutral
       pathPrefix: Characters/CH-Thursday
       guid: d746352032c474daa86f06011f017b41
+    - name: Like
+      pathPrefix: Characters/CH-Thursday
+      guid: 6c2f1ffba914c4a7aa9762d1492fb16c
+    - name: Dislike
+      pathPrefix: Characters/CH-Thursday
+      guid: 625e6765f98d342ce87948936098370f
+  - Id: Characters/42fdb0a4-0764-4bd8-a388-2b1c653e7c0f
+    Resources:
+    - name: Left
+      pathPrefix: Characters/BG-Curtain-Left
+      guid: 708371bbffc1243eb8e21f60c0771f5e
+  - Id: Characters/a3019c98-a776-4f84-a8ef-27f7d5beace1
+    Resources:
+    - name: Right
+      pathPrefix: Characters/BG-Curtain-Right
+      guid: c2c93df9963424a0fa6a7444ead392f8

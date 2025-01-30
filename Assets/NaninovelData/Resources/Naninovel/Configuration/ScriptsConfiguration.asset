@@ -24,8 +24,8 @@ MonoBehaviour:
   CompilerLocalization: {fileID: 11400000, guid: ecfd5703894a0fa4d828e75ccc400869, type: 2}
   StableIdentification: 0
   InitializationScript: 
-  TitleScript: 
-  StartGameScript: Nani_Love-Bubble
+  TitleScript: NaninovelScripts/Title_Love-Bubble
+  StartGameScript: NaninovelScripts/Nani_Love-Bubble
   AutoAddScripts: 1
   AutoResolvePath: 1
   HotReloadScripts: 1
