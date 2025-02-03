@@ -8,7 +8,7 @@
     @hide BG-Curtain-Left,BG-Curtain-Right time:2
 
 @back BG-Stage time:1
-@char CH-Host pos:200,0
+@char CH-Host.Neutral pos:200,0
 @bgm BGM_Show volume:0.25 intro:Music_Stinger
 
 ;Host walk-in
@@ -22,9 +22,6 @@
     @wait 1
     @char CH-Host pose:Zoom-In pose:Speaking pos:50,-35 time:1
     @wait 0.5
-
-
-
 
 # ShowStart
 @save
@@ -45,9 +42,11 @@ CH-Host: {playerName} is in between 4 feet and 6’ 10, likes long floatings on 
 CH-Host: And now, the first of three fabulous and bubbly contestants! 
 @char CH-Host pose:Zoom-Out pose:Right  pos:80,0 time:1
 CH-Host: She’s here to sweep you off your feet, she has perfect film and her name is SOAPIA!
+@sfx SFX_Audience_Applause
 @char CH-Host pose:Quiet
 
-@char CH-Soapia pos:50 pose:Speaking
+
+@char CH-Soapia.Neutral pos:50 pose:Speaking
 CH-Soapia: Hello darlings! If you choose me we’ll shine together. 
 CH-Soapia: I’m ready to float to where the wind takes us.
 @char CH-Soapia pose:Quiet 
@@ -56,9 +55,11 @@ CH-Soapia: I’m ready to float to where the wind takes us.
 @char CH-Host pose:Speaking
 CH-Host: Contestant number 2 is strong to the “tea”, for he owns a Bobba Tea shop, he has a cat and drives an electric bubble. 
 CH-Host: This is CHEWY!
+@sfx SFX_Audience_Applause
 @char CH-Host pose:Quiet
 
-@char CH-Chewy pos:50 pose:Speaking
+
+@char CH-Chewy.Neutral pos:50 pose:Speaking
 CH-Chewy: I’m so strong I can lift up any lady, and I have a cat named Bobba, like the tea, get it? 
 CH-Chewy: I'm also funny bro.
 @char CH-Chewy pose:Quiet
@@ -66,9 +67,11 @@ CH-Chewy: I'm also funny bro.
 
 @char CH-Host pose:Speaking
 CH-Host: Last but not least, directly from Foamrida, they're a software engineer everyday, but their name is THURSDAY!
+@sfx SFX_Audience_Applause
 @char CH-Host pose:Quiet
 
-@char CH-Thursday pos:50 pose:Speaking
+
+@char CH-Thursday.Neutral pos:50 pose:Speaking
 CH-Thursday: Sup?
 @char CH-Thursday pose:Quiet
 @char CH-Thursday pose:Left-Center pos:15,25 scale:0.75
@@ -141,14 +144,14 @@ CH-Player: Frothferatu, Air Sud 2 or The Soapfather, what’s your favorite movi
 @char CH-Chewy pose:Speaking
 @char CH-Chewy pose:Zoom-In pos:50,-65,0
 CH-Chewy: Frothfe-what-u? Bro, I gotta go with the best sport story ever made. Air Sud 2 forever!
+@char CH-Chewy pose:Quiet
 @char CH-Chewy pose:Zoom-Out pos:35,25,10 scale:0.75
 
-@char CH-Chewy pose:Quiet
 @char CH-Thursday pose:Speaking
 @char CH-Thursday pose:Zoom-In pos:50,-65,0
 CH-Thursday: Frothferatu has no equal. I liked it better than the original one with the actor Max SpumeBarm!
-@char CH-Thursday pose:Zoom-Out pos:15,25,10 scale:0.75
 @char CH-Thursday pose:Quiet
+@char CH-Thursday pose:Zoom-Out pos:15,25,10 scale:0.75
 
 @char CH-Soapia pose:Speaking
 @char CH-Soapia pose:Zoom-In pos:50,-65,0
@@ -369,6 +372,7 @@ CH-Host: Wowza! So fast! {playerName} really opened themselves up!
 @bgm BGM_Elimination volume:0.25 
 CH-Host: Aaand now, our first moment of truth, our Elimination Round!…
 
+
 # R3Questions
 CH-Host: {playerName} have to choose TWO contestants to eliminate. It’s a hard decision, but thats life, haha! (*wink*)
 @if eliminateChewy=false
@@ -382,13 +386,24 @@ CH-Host: {playerName} have to choose TWO contestants to eliminate. It’s a hard
 
 # EliminateChewy
 @char CH-Host pose:Quiet
-@char CH-Chewy pos:50 pose:Speaking
+@char IT-Arrow.Neutral pos:0,,0 time:0.25
+@wait 0.25
+
+@char CH-Chewy pose:Speaking
+@char CH-Chewy.Dislike pose:Zoom-In pos:50,-65,5
 CH-Chewy: “Bro, I saw I you and thought, no way! Im not bitter, your bitter!”- (Pop!)
+@char CH-Chewy pose:Quiet
+@char CH-Chewy pose:Zoom-Out pos:35,25,10 scale:0.75
+
+@char IT-Arrow.Shine pos:50 time:0.25
+@wait 0.5
+@char IT-Arrow.Neutral pos:150 time:0.25
+@wait 0.25
+
 @sfx SFX_Elimination_Bubble_Pop_01
 @set eliminateChewy=true
 @hide CH-Chewy
 @char CH-Host pose:Speaking
-
 @if eliminateThursday=true
     @goto .FinalChoice
 @if eliminateSoapia=true
@@ -399,13 +414,24 @@ CH-Chewy: “Bro, I saw I you and thought, no way! Im not bitter, your bitter!�
 
 # EliminateSoapia
 @char CH-Host pose:Quiet
-@char CH-Soapia pos:50 pose:Speaking
+@char IT-Arrow.Neutral pos:0,,0 time:0.25
+@wait 0.25
+
+@char CH-Soapia pose:Speaking
+@char CH-Soapia pose:Zoom-In pos:50,-65,5
 CH-Soapia: “Oh no, Darling! This is unexpected, well I guess I will cancel the Hans Simmer concert tickets- (Pop!)
+@char CH-Soapia pose:Quiet
+@char CH-Soapia pose:Zoom-Out pos:55,25,10 scale:0.75
+
+@char IT-Arrow.Shine pos:50 time:0.25
+@wait 0.5
+@char IT-Arrow.Neutral pos:150 time:0.25
+@wait 0.25
+
 @sfx SFX_Elimination_Bubble_Pop_01
 @set eliminateSoapia=true
 @hide CH-Soapia
 @char CH-Host pose:Speaking
-
 @if eliminateThursday=true
     @goto .FinalChoice
 @if eliminateChewy=true
@@ -415,8 +441,20 @@ CH-Soapia: “Oh no, Darling! This is unexpected, well I guess I will cancel the
 
 # EliminateThursday
 @char CH-Host pose:Quiet
-@char CH-Thursday pos:50 pose:Speaking
+@char IT-Arrow.Neutral pos:0,,0 time:0.25
+@wait 0.25
+
+@char CH-Thursday pose:Speaking
+@char CH-Thursday pose:Zoom-In pos:50,-65,5
 CH-Thursday: “Pop You!”- (Pop!).
+@char CH-Thursday pose:Quiet
+@char CH-Thursday pose:Zoom-Out pos:15,25,10 scale:0.75
+
+@char IT-Arrow.Shine pos:50 time:0.25
+@wait 0.5
+@char IT-Arrow.Neutral pos:150 time:0.25
+@wait 0.25
+
 @sfx SFX_Elimination_Bubble_Pop_01
 @set eliminateThursday=true
 @hide CH-Thursday
@@ -428,12 +466,17 @@ CH-Thursday: “Pop You!”- (Pop!).
 @goto .R3Questions
 
 
+;   === EDIT FROM HERE ====
 
 # FinalChoice
 @save
+@char CH-Host pose:Zoom-In pose:Speaking pos:50,-35 time:1
+
 CH-Host: My rubber heart just got broken in a million rubber bands, but the show must go on we are moving to our final round, the Final Choice!
 CH-Host: Now our chosen one is going to decide if this Love Bubble is going to happen or if {playerName} is going to Pop. 
+@char CH-Host pose:Zoom-Out pos:80,0,0 time:1
 CH-Host: Let’s see what the chosen feels…
+
 
 @if eliminateSoapia=eliminateThursday
     @if pointsChewy>2
@@ -458,6 +501,7 @@ CH-Host: Let’s see what the chosen feels…
 # ThursdayYes
 @char CH-Host pose:Quiet
 @char CH-Thursday pos:50 pose:Speaking
+@char CH-Thursday pose:Zoom-In pos:50,-65,0
 CH-Thursday: “You will look so good with eyeliner! I say Yes! Let’s go watch Frothferatu!
 @hide CH-Thursday
 @goto .ShowEndYes
@@ -467,6 +511,8 @@ CH-Thursday: “You will look so good with eyeliner! I say Yes! Let’s go watch
 # SoapiaYes
 @char CH-Host pose:Quiet
 @char CH-Soapia pos:50 pose:Speaking
+@char CH-Soapia pose:Zoom-In pos:50,-65,0
+
 CH-Soapia: ‘Well, If you like me and I like you then, Yes! Two tickets for Micheal Bublé please! (*giggles*)
 @hide CH-Soapia
 @goto .ShowEndYes
@@ -476,6 +522,8 @@ CH-Soapia: ‘Well, If you like me and I like you then, Yes! Two tickets for Mic
 # ChewyYes
 @char CH-Host pose:Quiet
 @char CH-Chewy pos:50 pose:Speaking
+@char CH-Chewy pose:Zoom-In pos:50,-65,0
+
 CH-Chewy: Alright, Yes, lets do it! Can’t wait for you to meet Bobba. Next stop, Ballholland Drive!
 @hide CH-Chewy
 @goto .ShowEndYes
@@ -486,6 +534,8 @@ CH-Chewy: Alright, Yes, lets do it! Can’t wait for you to meet Bobba. Next sto
 @char CH-Host pose:Speaking
 @stopBgm
 @bgm BGM_Title volume:0.25
+@char CH-Host pose:Zoom-In pose:Speaking pos:50,-35 time:1
+
 CH-Host: Wowza! And they’ve said Yes! 
 CH-Host: A Love Bubble have been created, my eyes have started to water. 
 CH-Host: Come back for next week episode when we will have Celebrity Floaters with Droplet Johansson and Ball Pacino!
@@ -525,6 +575,8 @@ CH-Chewy: “Now that I think about it, there’s only space for me and Bobby in
 @char CH-Host pose:Speaking
 @stopBgm
 @bgm BGM_Title volume:0.25
+@char CH-Host pose:Zoom-In pose:Speaking pos:50,-35 time:1
+
 CH-Host: Aawww! Sorry to hear that. We have a clear No from our contestant.
 CH-Host: Sorry {playerName}, looks like you’ll be doing the float of shame out of here.
 CH-Host: Don’t miss next show’s edition of Toxic Bubbles! See you then!.
@@ -538,6 +590,9 @@ CH-Host: Thank you for playing!
 @await
     @char BG-Curtain-Left pos:-50,0,0 time:1
     @char BG-Curtain-Right pos:150,0,0 time:1
+    @wait 1
     @slide BG-Curtain-Left from:-50 to:50 time:1.5
     @slide BG-Curtain-Right from:150 to:50 time:1.5
-@stop
+    @wait 2
+
+@title

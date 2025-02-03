@@ -161,15 +161,12 @@ MonoBehaviour:
     Resources: []
   - Id: Scripts
     Resources:
-    - name: scr_01
-      pathPrefix: Scripts
-      guid: 
-    - name: NaninovelScripts/Nani_Love-Bubble
-      pathPrefix: Scripts
-      guid: 2bfb9803d1ba6465f836b14ec05e74b7
-    - name: NaninovelScripts/Title_Love-Bubble
+    - name: Title_Love-Bubble
       pathPrefix: Scripts
       guid: 09e3a33cd187c45499f1ce2e4c00fba3
+    - name: Nani_Love-Bubble
+      pathPrefix: Scripts
+      guid: 2bfb9803d1ba6465f836b14ec05e74b7
   - Id: Characters/a84f0262-54d5-47b6-a73d-1ca2c364a8d4
     Resources:
     - name: Neutral
@@ -276,3 +273,11 @@ MonoBehaviour:
     - name: Right
       pathPrefix: Characters/BG-Curtain-Right
       guid: c2c93df9963424a0fa6a7444ead392f8
+  - Id: Characters/665134b8-1365-45a5-a5a7-f053388550c0
+    Resources:
+    - name: Neutral
+      pathPrefix: Characters/IT-Arrow
+      guid: 2407bf95001954ea2bccf844e4b2668c
+    - name: Shine
+      pathPrefix: Characters/IT-Arrow
+      guid: 5f5bece5f7ab54afd85f9a0007dd5e2b

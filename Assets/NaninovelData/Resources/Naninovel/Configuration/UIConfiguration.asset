@@ -31,5 +31,5 @@ MonoBehaviour:
   FontOptions:
   - FontName: Chango
     FontResource: Assets/Fonts/Chango/Chango-Regular.ttf
-    ApplyOnLocale: 
+    ApplyOnLocale: en
   DefaultFont: Chango

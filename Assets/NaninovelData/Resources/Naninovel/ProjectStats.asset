@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: ProjectStats
   m_EditorClassIdentifier: 
   TotalScriptsCount: 2
-  TotalCommandCount: 365
+  TotalCommandCount: 404
   TotalWordsCount: 833
